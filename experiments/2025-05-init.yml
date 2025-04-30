@@ -1,0 +1,9 @@
+# Hydra/MLflow config for first run
+experiment:
+  name: "init"
+  date: "2025-05"
+  model: "fredf"
+  params:
+    window_size: 60
+    fft_n: 128
+    zscore_threshold: 3.0

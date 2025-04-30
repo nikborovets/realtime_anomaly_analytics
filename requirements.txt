@@ -1,0 +1,10 @@
+pandas
+numpy
+scipy
+scikit-learn
+torch
+prometheus-api-client
+pyyaml
+hydra-core
+mlflow
+pydantic-settings
