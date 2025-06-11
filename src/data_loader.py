@@ -4,6 +4,8 @@ import pandas as pd
 import requests
 import time
 import os
+import numpy as np
+from tqdm.auto import tqdm
 from src.config import PROMETHEUS_URL as PROM
 
 from src.config import METRIC_CFG
@@ -59,7 +61,8 @@ def fetch_frame(
     start_date: str = "2025-04-27 18:00:00",
     end_date: str = "2025-05-13 11:41:00",
     use_cache: bool = False,
-    cache_filename: str = None
+    cache_filename: str = None,
+    verbose: bool = False
 ) -> pd.DataFrame:
     """
     Fetch time series data from Prometheus.
@@ -70,6 +73,7 @@ def fetch_frame(
         end_date: End date for data fetching
         use_cache: If True, try to load from cache first
         cache_filename: Filename for cache. If None, defaults to f"prometheus_data_{start_date.split(' ')[0]}_{end_date.split(' ')[0]}.parquet"
+        verbose: If True, print detailed fetching messages. Defaults to False.
     
     Returns:
         DataFrame with time series data
@@ -106,36 +110,45 @@ def fetch_frame(
 
         current_chunk_start_ts = start.timestamp()
         
-        while current_chunk_start_ts < end.timestamp():
-            chunk_end_ts = min(current_chunk_start_ts + max_duration_per_chunk_seconds, end.timestamp())
+        # Calculate total chunks for tqdm
+        total_duration = end.timestamp() - start.timestamp()
+        num_chunks = int(np.ceil(total_duration / max_duration_per_chunk_seconds))
 
-            print(f"Fetching {feat} from Prometheus for chunk: {dt.datetime.fromtimestamp(current_chunk_start_ts)} to {dt.datetime.fromtimestamp(chunk_end_ts)}")
-            
-            try:
-                series_chunk = _query_range(expr, current_chunk_start_ts, chunk_end_ts, step=STEP)
-            except RuntimeError as e:
-                if "exceeded maximum resolution of 11,000 points per timeseries" in str(e):
-                    raise RuntimeError(f"Error: Even after splitting the query, Prometheus rejected a chunk for metric '{feat}' due to too many points. Consider increasing the 'STEP' value (currently {STEP}) in src/data_loader.py.")
-                else:
-                    raise e
+        # Wrap the chunk fetching loop with tqdm
+        # with tqdm(total=num_chunks, desc=f"Fetching {feat}", disable=not verbose) as pbar:
+        with tqdm(total=num_chunks, desc=f"Fetching {feat}") as pbar:
+            while current_chunk_start_ts < end.timestamp():
+                chunk_end_ts = min(current_chunk_start_ts + max_duration_per_chunk_seconds, end.timestamp())
 
-            for serie in series_chunk:
-                metric_labels = serie.get("metric", {})
-                label_suffix = ""
-                if metric_labels:
-                    filtered_labels = {k: v for k, v in metric_labels.items() if not k.startswith("__")}
-                    if filtered_labels:
-                        label_suffix = "_" + "_".join(f"{k}_{v}" for k, v in sorted(filtered_labels.items()))
+                if verbose:
+                    print(f"Fetching {feat} from Prometheus for chunk: {dt.datetime.fromtimestamp(current_chunk_start_ts)} to {dt.datetime.fromtimestamp(chunk_end_ts)}")
                 
-                unique_feat_name = f"{feat}{label_suffix}"
+                try:
+                    series_chunk = _query_range(expr, current_chunk_start_ts, chunk_end_ts, step=STEP)
+                except RuntimeError as e:
+                    if "exceeded maximum resolution of 11,000 points per timeseries" in str(e):
+                        raise RuntimeError(f"Error: Even after splitting the query, Prometheus rejected a chunk for metric '{feat}' due to too many points. Consider increasing the 'STEP' value (currently {STEP}) in src/data_loader.py.")
+                    else:
+                        raise e
 
-                if unique_feat_name not in metric_series_combined_values:
-                    metric_series_combined_values[unique_feat_name] = []
-                
-                metric_series_combined_values[unique_feat_name].extend(serie["values"])
+                for serie in series_chunk:
+                    metric_labels = serie.get("metric", {})
+                    label_suffix = ""
+                    if metric_labels:
+                        filtered_labels = {k: v for k, v in metric_labels.items() if not k.startswith("__")}
+                        if filtered_labels:
+                            label_suffix = "_" + "_".join(f"{k}_{v}" for k, v in sorted(filtered_labels.items()))
+                    
+                    unique_feat_name = f"{feat}{label_suffix}"
 
-            current_chunk_start_ts = chunk_end_ts
-            time.sleep(0.2) # To avoid overwhelming Prometheus API
+                    if unique_feat_name not in metric_series_combined_values:
+                        metric_series_combined_values[unique_feat_name] = []
+                    
+                    metric_series_combined_values[unique_feat_name].extend(serie["values"])
+
+                current_chunk_start_ts = chunk_end_ts
+                time.sleep(0.2) # To avoid overwhelming Prometheus API
+                pbar.update(1)
 
         for unique_feat_name, values_list in metric_series_combined_values.items():
             if not values_list:
@@ -158,6 +171,13 @@ def fetch_frame(
 
     df = pd.concat(all_dataframes_for_concat, axis=1, join='outer').sort_index().ffill(limit=3)
     
+    # Явное удаление дубликатов по индексу, если они возникли из-за пересекающихся чанков
+    # Это гарантирует, что каждая временная метка уникальна
+    if df.index.duplicated().any():
+        original_len = len(df)
+        df = df[~df.index.duplicated(keep='first')]
+        print(f"Удалено {original_len - len(df)} дублирующихся временных меток. Оставлено {len(df)} уникальных точек.")
+
     # Save to cache for future use
     save_dataframe(df, cache_filename)
     
