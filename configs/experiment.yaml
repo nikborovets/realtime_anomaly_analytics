@@ -1,0 +1,11 @@
+window:
+  L: 40        # 10 минут истории при 15‑сек шаге
+  T: 12        # 3 минуты прогноза
+  stride: 10   # 2.5 мин между окнами
+model:
+  encoder: freq_linear      # или patchtst_fredf
+  alpha: 0.8                # доля частотного лосса
+train:
+  batch_size: 256
+  epochs: 20
+  lr: 1e-3

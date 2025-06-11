@@ -11,3 +11,4 @@ COPY . .
 RUN apt-get update && apt-get install -y gcc
 
 CMD ["bash"]
+# CMD ["python", "-m", "ipykernel_launcher", "-f", "/dev/null"]

@@ -1,11 +1,17 @@
 import numpy as np
 import pandas as pd
-from scipy.fft import fft
+import torch
 
 
-def rolling_zscore(series, window):
-    return (series - series.rolling(window).mean()) / series.rolling(window).std()
+def zscore(df: pd.DataFrame, win: int = 180) -> pd.DataFrame:
+    return (df - df.rolling(win).mean()) / df.rolling(win).std()
 
 
-def compute_fft(series, n):
-    return np.abs(fft(series, n=n))
+def make_windows(df: pd.DataFrame, target: str, L: int, T: int):
+    arr = df.values.astype("float32")
+    tgt_idx = df.columns.get_loc(target)
+    X, y = [], []
+    for i in range(len(df) - L - T):
+        X.append(arr[i:i+L])
+        y.append(arr[i+L:i+L+T, tgt_idx])
+    return torch.tensor(np.stack(X)), torch.tensor(np.stack(y))

@@ -1,0 +1,22 @@
+# # configs/metrics.yaml
+# # ---------- Gauges ----------
+# fps_vidcap:                "avg_over_time(vidcap_fps[1m])"
+# fps_vidcap_avg:            "avg_over_time(vidcap_fps_avg[1m])"
+# vidcap_delay_gauge:        "avg_over_time(vidcap_delay[1m])"
+# inference_time_micros_gauge: "avg_over_time(inference_time_micros[1m])"
+
+# # ---------- Histograms ----------
+# kafka_delay_p90:           "histogram_quantile(0.9, sum(rate(ml_to_backend_kafka_delay_bucket[1m])) by (le))"
+# kafka_delay_mean:          "sum(rate(ml_to_backend_kafka_delay_sum[1m])) / sum(rate(ml_to_backend_kafka_delay_count[1m]))"
+
+# db_delay_p90:              "histogram_quantile(0.9, sum(rate(db_insert_delay_bucket[1m])) by (le))"
+# db_delay_mean:             "sum(rate(db_insert_delay_sum[1m])) / sum(rate(db_insert_delay_count[1m]))"
+
+common_delay_p90:          "histogram_quantile(0.9, sum(rate(common_event_delay_bucket[1m])) by (le))"   # ← целевая
+# heartbeat_delay_p90:       "histogram_quantile(0.9, sum(rate(heartbeat_delay_bucket[1m])) by (le))"
+
+# seq_health_bad_ratio:      "1 - histogram_quantile(0.0, sum(rate(seq_events_health_bucket[1m])) by (le))" # доля некорректных
+
+# # ---------- Counters ----------
+# heartbeat_per_sec:         "rate(heartbeat_counter_total[1m])"
+# events_per_sec:            "rate(event_counter_total[1m])"
