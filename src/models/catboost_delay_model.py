@@ -50,9 +50,9 @@ class DelayForecastModel:
             "loss_function": "MultiRMSE",  # Key change for multi-output
             "depth": 8,
             "learning_rate": 0.05,
-            "iterations": 1_000, # Reduce iterations for faster initial training
+            "iterations": 10, # Reduce iterations for faster initial training
             "random_seed": random_state,
-            "early_stopping_rounds": 50,
+            "early_stopping_rounds": 5,
             "verbose": False,
         }
         self.cb_params.update(cb_params)

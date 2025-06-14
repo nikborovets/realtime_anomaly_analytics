@@ -34,3 +34,4 @@ Thumbs.db
 *.log
 
 cache/
+my_delay_model*/
