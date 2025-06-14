@@ -1,5 +1,7 @@
+import os
 from typing import List, Optional, Tuple
 
+import joblib
 import numpy as np
 import pandas as pd
 from catboost import CatBoostRegressor, Pool
@@ -106,7 +108,7 @@ class DelayForecastModel:
             raise RuntimeError("Model is not fitted yet.")
             
         # 1. Prepare features for the last available data point
-        X = self._prepare_features(df_hist.copy(), self.target_col_, [])
+        X = self._prepare_features(df_hist, self.target_col_, [])
         last_features = X.iloc[-1:]
 
         # 2. Make a single prediction to get the entire forecast
@@ -122,12 +124,14 @@ class DelayForecastModel:
     def _prepare_data(self, df: pd.DataFrame, target_col: str, feature_cols: List[str]):
         """Creates feature matrix (X) and multi-target matrix (Y)."""
         # Create features (X)
-        X = self._prepare_features(df.copy(), target_col, feature_cols)
+        X = self._prepare_features(df, target_col, feature_cols)
 
-        # Create multi-target matrix (Y)
-        Y = pd.DataFrame(index=df.index)
-        for h in range(1, self.horizon + 1):
-            Y[f'target_{h}'] = df[target_col].shift(-h)
+        # Create multi-target matrix (Y) in a performant way
+        targets = {
+            f"target_{h}": df[target_col].shift(-h)
+            for h in range(1, self.horizon + 1)
+        }
+        Y = pd.DataFrame(targets)
 
         # Align X and Y by dropping NaNs
         combined = pd.concat([X, Y], axis=1).dropna()
@@ -143,6 +147,7 @@ class DelayForecastModel:
         feature_cols: List[str]
     ) -> pd.DataFrame:
         """Creates all features for the dataframe."""
+        df = df.copy()  # Explicitly create a copy
         df_out = df[feature_cols].copy()
 
         # calendar features
@@ -158,3 +163,47 @@ class DelayForecastModel:
         df_out = pd.concat([df_out, df[lag_names + roll_names]], axis=1)
 
         return df_out
+
+    def save(self, path: str) -> None:
+        """Saves the fitted model to a directory.
+        
+        The directory will contain:
+        - 'catboost_model.cbm': The core CatBoost model.
+        - 'model_metadata.joblib': Other parameters of the wrapper class.
+        """
+        if not self.fitted_:
+            raise RuntimeError("Model is not fitted yet. Cannot save.")
+
+        os.makedirs(path, exist_ok=True)
+
+        # 1. Save the CatBoost model using its native method
+        self.model.save_model(os.path.join(path, "catboost_model.cbm"))
+
+        # 2. Save the metadata of the wrapper
+        metadata = self.__dict__.copy()
+        del metadata["model"]  # The model itself is saved separately
+
+        joblib.dump(metadata, os.path.join(path, "model_metadata.joblib"))
+        print(f"Model saved to {path}")
+
+    @classmethod
+    def load(cls, path: str):
+        """Loads a model from a directory."""
+        metadata_path = os.path.join(path, "model_metadata.joblib")
+        catboost_model_path = os.path.join(path, "catboost_model.cbm")
+
+        if not os.path.exists(metadata_path) or not os.path.exists(
+            catboost_model_path
+        ):
+            raise FileNotFoundError(f"Model files not found in directory: {path}")
+
+        # 1. Load metadata and create a shell instance
+        metadata = joblib.load(metadata_path)
+        instance = cls.__new__(cls)
+        instance.__dict__.update(metadata)
+
+        # 2. Load the CatBoost model into the instance
+        instance.model = CatBoostRegressor()
+        instance.model.load_model(catboost_model_path)
+
+        return instance

@@ -1,6 +1,7 @@
 pandas
 numpy
 scipy
+matplotlib
 scikit-learn
 torch
 # prometheus-api-client
@@ -8,3 +9,6 @@ pyyaml
 hydra-core
 mlflow
 pydantic-settings
+requests
+tqdm
+catboost
