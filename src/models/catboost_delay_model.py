@@ -41,6 +41,7 @@ class DelayForecastModel:
         self.random_state = random_state
         self.cat_features = cat_features or ["hour", "dow"]
         self.feature_names_ = []
+        self.target_col_ = None  # Запоминаем имя целевой колонки
 
         # CatBoost params for multi-output regression
         self.cb_params = {
@@ -65,6 +66,7 @@ class DelayForecastModel:
         feature_cols: Optional[List[str]] = None,
     ):
         """Prepares data and fits the multi-output model."""
+        self.target_col_ = target_col  # Сохраняем имя для predict
         feature_cols = feature_cols or []
 
         # Prepare features (X) and multi-target (Y) for training data
@@ -104,7 +106,7 @@ class DelayForecastModel:
             raise RuntimeError("Model is not fitted yet.")
             
         # 1. Prepare features for the last available data point
-        X = self._prepare_features(df_hist.copy(), 'dummy', []) # target isn't used here
+        X = self._prepare_features(df_hist.copy(), self.target_col_, [])
         last_features = X.iloc[-1:]
 
         # 2. Make a single prediction to get the entire forecast
