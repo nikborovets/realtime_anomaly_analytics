@@ -12,5 +12,5 @@ pydantic-settings
 requests
 tqdm
 catboost
-pmdarima
+statsforecast
 statsmodels
