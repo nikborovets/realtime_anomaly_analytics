@@ -37,3 +37,4 @@ cache/
 my_delay_model*/
 recursive_delay_model*/
 direct_delay_model*/
+statsforecast_model.pkl
