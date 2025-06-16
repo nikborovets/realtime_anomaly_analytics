@@ -30,11 +30,16 @@ mlruns/
 .DS_Store
 Thumbs.db
 
-# Log files
-*.log
 
 cache/
-my_delay_model*/
-recursive_delay_model*/
-direct_delay_model*/
+# my_delay_model*/
+# recursive_delay_model*/
+# direct_delay_model*/
+# log_transform_model*/
+*.cbm
+*.pkl
+*.joblib
 statsforecast_model.pkl
+
+autoarima_training_4h.log
+autoarima_training.log

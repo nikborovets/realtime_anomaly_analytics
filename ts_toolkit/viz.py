@@ -4,7 +4,8 @@ import pandas as pd
 def plot_history_forecast(history: pd.Series,
                           forecast: pd.Series,
                           actual: pd.Series = None,
-                          title: str = '') -> None:
+                          title: str = '',
+                          filename: str = None) -> None:
     """Строит график истории, прогноза и, опционально, фактических значений.
 
     Параметры
@@ -29,4 +30,8 @@ def plot_history_forecast(history: pd.Series,
     plt.plot(forecast.index, forecast, label='forecast', lw=2)
     if actual is not None:
         plt.plot(actual.index, actual, label='actual', lw=2, alpha=.7)
-    plt.title(title); plt.grid(alpha=.3); plt.legend(); plt.tight_layout(); plt.show()
+    plt.title(title); plt.grid(alpha=.3); plt.legend(); plt.tight_layout()
+    if not filename:
+        plt.show()
+    if filename:
+        plt.savefig(filename)
