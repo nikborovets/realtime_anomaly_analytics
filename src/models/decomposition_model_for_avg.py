@@ -29,7 +29,7 @@ class DecompositionImprovedTrendModel:
         random_state: int = 42,
         cat_features: Optional[List[str]] = None,
         trend_model_type: str = 'local',
-        trend_window_size: int = 960,
+        trend_window_size: int = 5760,
         **cb_params,
     ) -> None:
         self.horizon = horizon
@@ -43,6 +43,10 @@ class DecompositionImprovedTrendModel:
             raise ValueError("trend_model_type должен быть 'global' или 'local'")
         self.trend_model_type = trend_model_type
         self.trend_window_size = trend_window_size
+
+        # Дополнительные параметры фичеинжиниринга
+        self.use_cyclic_features = cb_params.pop('use_cyclic_features', True)
+
         self.scaler_ = None
 
         self.trend_model_global = None
@@ -61,10 +65,11 @@ class DecompositionImprovedTrendModel:
         self.cb_params = {
             "loss_function": "RMSE",
             "boosting_type": "Plain",
-            "l2_leaf_reg": 10.0,
-            "depth": 10,
-            "learning_rate": 0.075,
-            "iterations": 5000,
+            "l2_leaf_reg": 15.0,
+            "depth": 15,
+            "learning_rate": 0.05,
+            "iterations": 7000,
+            "rsm": 0.8,
             "random_seed": random_state,
             "early_stopping_rounds": 300,
             "verbose": False,
@@ -229,6 +234,11 @@ class DecompositionImprovedTrendModel:
         df_out = pd.DataFrame(index=df_copy.index)
         df_out["hour"] = df_out.index.hour.astype(str)
         df_out['dow'] = df_out.index.dayofweek.astype(str)
+        if self.use_cyclic_features:
+            df_out['hour_sin'] = np.sin(2 * np.pi * df_out.index.hour / 24.0)
+            df_out['hour_cos'] = np.cos(2 * np.pi * df_out.index.hour / 24.0)
+            df_out['dow_sin'] = np.sin(2 * np.pi * df_out.index.dayofweek / 7.0)
+            df_out['dow_cos'] = np.cos(2 * np.pi * df_out.index.dayofweek / 7.0)
         df_out['is_weekend'] = (df_out.index.dayofweek >= 5).astype(int)
         df_out['time_idx'] = (df_out.index - self.train_start_time_).total_seconds() / 3600.0
         for lag in self.lags:
