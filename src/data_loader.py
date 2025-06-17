@@ -147,7 +147,7 @@ def fetch_frame(
                     metric_series_combined_values[unique_feat_name].extend(serie["values"])
 
                 current_chunk_start_ts = chunk_end_ts
-                time.sleep(0.2) # To avoid overwhelming Prometheus API
+                time.sleep(0.02) # To avoid overwhelming Prometheus API
                 pbar.update(1)
 
         for unique_feat_name, values_list in metric_series_combined_values.items():
@@ -161,6 +161,11 @@ def fetch_frame(
                 "ts": pd.to_datetime(ts, unit="s"),
                 unique_feat_name: pd.to_numeric(vals, errors='coerce')
             }).set_index("ts")
+            
+            # Удаляем дубликаты перед добавлением в список
+            if df_single_series.index.duplicated().any():
+                df_single_series = df_single_series[~df_single_series.index.duplicated(keep='first')]
+            
             all_dataframes_for_concat.append(df_single_series)
         
         time.sleep(0.2) # Sleep after processing each *metric expression*
@@ -171,12 +176,11 @@ def fetch_frame(
 
     df = pd.concat(all_dataframes_for_concat, axis=1, join='outer').sort_index().ffill(limit=3)
     
-    # Явное удаление дубликатов по индексу, если они возникли из-за пересекающихся чанков
-    # Это гарантирует, что каждая временная метка уникальна
+    # Дополнительная проверка на случай, если дубликаты возникли после concat
     if df.index.duplicated().any():
         original_len = len(df)
         df = df[~df.index.duplicated(keep='first')]
-        print(f"Удалено {original_len - len(df)} дублирующихся временных меток. Оставлено {len(df)} уникальных точек.")
+        print(f"Удалено {original_len - len(df)} дублирующихся временных меток после concat. Оставлено {len(df)} уникальных точек.")
 
     # Save to cache for future use
     save_dataframe(df, cache_filename)

@@ -16,6 +16,9 @@
 # heartbeat_delay_p90:       "histogram_quantile(0.9, sum(rate(heartbeat_delay_bucket[1m])) by (le))"
 # common_cad:                'common_cad{instance="consumer_from_ws_with_metrics:8000", job="consumer_from_ws_with_metrics", service="castle"}'
 common_cad_avg1h:                'avg_over_time(common_cad{instance="consumer_from_ws_with_metrics:8000", job="consumer_from_ws_with_metrics", service="castle"}[1h])'
+db_insert_cad_avg1h:             'avg_over_time(db_insert_cad{instance="10.201.92.176:8010", job="consumer_ml_to_db", service="castle"}[1h])'
+kafka_network_cad_avg1h:         'avg_over_time(kafka_network_cad{instance="10.201.92.176:8010", job="consumer_ml_to_db", service="castle"}[1h])'
+counter_events_total:            'counter_events_total{instance="consumer_from_ws_with_metrics:8000", job="consumer_from_ws_with_metrics", service="castle"}'
 
 # seq_health_bad_ratio:      "1 - histogram_quantile(0.0, sum(rate(seq_events_health_bucket[1m])) by (le))" # доля некорректных
 

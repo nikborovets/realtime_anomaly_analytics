@@ -59,9 +59,15 @@ class DecompositionImprovedTrendModel:
         self.fitted_ = False
 
         self.cb_params = {
-            "loss_function": "RMSE", "boosting_type": "Plain", "l2_leaf_reg": 10.0,
-            "depth": 10, "learning_rate": 0.075, "iterations": 2500,
-            "random_seed": random_state, "early_stopping_rounds": 150, "verbose": False,
+            "loss_function": "RMSE",
+            "boosting_type": "Plain",
+            "l2_leaf_reg": 10.0,
+            "depth": 10,
+            "learning_rate": 0.075,
+            "iterations": 5000,
+            "random_seed": random_state,
+            "early_stopping_rounds": 300,
+            "verbose": False,
         }
         self.cb_params.update(cb_params)
 
