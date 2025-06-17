@@ -24,8 +24,8 @@ class DecompositionRecursiveModel:
         inverse-transformed back to the original scale.
     """
 
-    DEFAULT_LAGS = [1, 2, 4, 96]
-    DEFAULT_ROLL = [4, 12, 96]
+    DEFAULT_LAGS = [1, 2, 4, 96, 192, 5760]
+    DEFAULT_ROLL = [4, 96, 192, 1920, 2880, 4320, 5760, 8640]
 
     def __init__(
         self,
