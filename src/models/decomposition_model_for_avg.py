@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 from catboost import CatBoostRegressor, Pool
 from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
 from statsmodels.tsa.seasonal import seasonal_decompose
 
 
@@ -42,6 +43,7 @@ class DecompositionImprovedTrendModel:
             raise ValueError("trend_model_type должен быть 'global' или 'local'")
         self.trend_model_type = trend_model_type
         self.trend_window_size = trend_window_size
+        self.scaler_ = None
 
         self.trend_model_global = None
         self.last_trend_value_ = None
@@ -115,6 +117,17 @@ class DecompositionImprovedTrendModel:
         resid_df = new_residuals.to_frame(name=target_col)
         # ========================================================
 
+        self.scaler_ = StandardScaler()
+        if val_df is not None:
+            train_resid_values = resid_df[resid_df.index < val_df.index[0]].values
+        else:
+            train_resid_values = resid_df.values
+        
+        self.scaler_.fit(train_resid_values)
+
+        scaled_resid_values = self.scaler_.transform(resid_df.values)
+        resid_df = pd.DataFrame(scaled_resid_values, index=resid_df.index, columns=[target_col])
+
         if val_df is not None:
             val_start_time = val_df.index[0]
             train_resid_df = resid_df[resid_df.index < val_start_time]
@@ -167,21 +180,28 @@ class DecompositionImprovedTrendModel:
         }).dropna()
 
         resid_hist = temp_df_hist['log_data'] - temp_df_hist['trend'] - temp_df_hist['seasonal']
-        current_history = resid_hist.to_frame(name=self.target_col_)
+        
+        scaled_resid_hist_values = self.scaler_.transform(resid_hist.values.reshape(-1, 1))
+        current_history = pd.DataFrame(scaled_resid_hist_values, index=resid_hist.index, columns=[self.target_col_])
 
-        predictions_residuals = []
+        predictions_residuals_scaled = []
         for _ in range(self.horizon):
             X = self._prepare_features(current_history, self.target_col_, [])
             last_features = X.iloc[-1:]
-            next_pred_residual = self.model.predict(last_features)[0]
-            predictions_residuals.append(next_pred_residual)
+            next_pred_residual_scaled = self.model.predict(last_features)[0]
+            predictions_residuals_scaled.append(next_pred_residual_scaled)
             last_time = current_history.index[-1]
             next_time = last_time + pd.to_timedelta(self.time_step_seconds_, 's')
-            new_row = pd.DataFrame({self.target_col_: [next_pred_residual]}, index=[next_time])
+            new_row = pd.DataFrame({self.target_col_: [next_pred_residual_scaled]}, index=[next_time])
             current_history = pd.concat([current_history, new_row])
 
-        last_known_residual = current_history[self.target_col_].iloc[-self.horizon - 1]
-        smoothed_residuals = pd.Series(predictions_residuals).ewm(alpha=0.1).mean()
+        predictions_residuals_unscaled = self.scaler_.inverse_transform(
+            np.array(predictions_residuals_scaled).reshape(-1, 1)
+        ).flatten()
+        
+        last_known_residual = resid_hist.iloc[-1]
+        
+        smoothed_residuals = pd.Series(predictions_residuals_unscaled).ewm(alpha=0.1).mean()
         initial_offset = last_known_residual - smoothed_residuals.iloc[0]
         final_residuals = smoothed_residuals + initial_offset
 
