@@ -15,8 +15,20 @@ import datetime
 from ts_toolkit.split import three_way_split
 from ts_toolkit.viz import plot_history_forecast
 
-# базовую конфигурацию логгера оставляем минимальной, хендлеры будем добавлять динамически
-logging.basicConfig(level=logging.INFO, format="%(asctime)s — %(levelname)s — %(message)s")
+# --- базовый логгер ---
+LOGS_ROOT = Path("tune_catboost")
+LOGS_ROOT.mkdir(parents=True, exist_ok=True)
+
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+
+# Добавляем FileHandler ко всему процессу (один на весь запуск)
+if not any(isinstance(h, logging.FileHandler) and h.baseFilename.endswith("tuning.log") for h in root_logger.handlers):
+    fh_root = logging.FileHandler(LOGS_ROOT / "tuning.log")
+    fh_root.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s"))
+    root_logger.addHandler(fh_root)
+
+# Можно сохранить вывод и в консоль, но по умолчанию basicConfig уже создаёт StreamHandler.
 
 
 def build_param_grid(fast: bool = False) -> List[Dict]:
