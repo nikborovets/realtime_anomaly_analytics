@@ -182,23 +182,27 @@ def evaluate_params(
         early_stopping_rounds=params["early_stopping_rounds"],
     )
     final_model.fit(df_train_val, target_col=target_col, val_df=df_train_val_val)
-    y_pred = final_model.predict(df_hist=df_train_val)
+    y_pred = final_model.predict(df_hist=pd.concat([df_train_val, df_train_val_val]))
     y_true = df_hold[target_col].reindex(y_pred.index).dropna()
     y_pred = y_pred.reindex(y_true.index).dropna()
 
-    ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    hold_hist_start = y_pred.index[0] - pd.Timedelta(minutes=30)
-    plot_history_forecast(
-        history=df_train_val.loc[hold_hist_start:y_pred.index[0], target_col],
-        forecast=y_pred,
-        actual=y_true,
-        title="Blind forecast vs actual — hold-out",
-        filename=str(plots_dir / f"hold_out_forecast_{ts}.png"),
-    )
+    if not y_pred.empty and not y_true.empty:
+        ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        hold_hist_start = y_pred.index[0] - pd.Timedelta(minutes=30)
+        plot_history_forecast(
+            history=df_train_val.loc[hold_hist_start:y_pred.index[0], target_col],
+            forecast=y_pred,
+            actual=y_true,
+            title="Blind forecast vs actual — hold-out",
+            filename=str(plots_dir / f"hold_out_forecast_{ts}.png"),
+        )
+    else:
+        logger.warning("Hold-out: нет пересечения данных, график не сохранён")
 
     models_dir = Path(f"tune_catboost/models/{model_name}")
     final_model.save(str(models_dir))
     logger.info("Final model saved to %s", models_dir)
+    logger.info("Final model CatBoost params: %s", final_model.cb_params)
 
     return avg_metrics
 
