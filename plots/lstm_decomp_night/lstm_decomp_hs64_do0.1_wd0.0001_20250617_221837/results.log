@@ -1,0 +1,9 @@
+2025-06-17 22:18:37,020 - INFO - ==== Experiment 1/2 → lstm_decomp_hs64_do0.1_wd0.0001_20250617_221837 ====
+2025-06-17 22:18:37,021 - INFO - Params: {'hidden_size': 64, 'dropout': 0.1, 'weight_decay': 0.0001}
+2025-06-17 22:18:37,023 - INFO - -- Fold 1/5
+2025-06-17 22:18:37,098 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_decomp_multivariate_forecast.py:111: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:18:37,098 - ERROR - df_filled = df.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:18:39,476 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_decomp_multivariate_forecast.py:175: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+2025-06-17 22:18:39,476 - ERROR - scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp)
+2025-06-17 22:18:40,118 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_decomp_multivariate_forecast.py:186: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:18:40,118 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):

@@ -1,1 +1,2 @@
- 
+from .lstm_multivariate_forecast import LSTMMultivariateForecast
+from .lstm_decomp_multivariate_forecast import LSTMDecompMultivariateForecast 

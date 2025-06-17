@@ -1,0 +1,3 @@
+2025-06-17 22:35:26,151 - INFO - ==== Experiment 1/2 → lstm_decomp_hs64_do0.1_wd0.0001_20250617_223526 ====
+2025-06-17 22:35:26,151 - INFO - Params: {'hidden_size': 64, 'dropout': 0.1, 'weight_decay': 0.0001}
+2025-06-17 22:35:26,152 - INFO - -- Fold 1/5

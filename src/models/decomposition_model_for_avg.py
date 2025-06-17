@@ -22,7 +22,7 @@ class DecompositionImprovedTrendModel:
 
     def __init__(
         self,
-        horizon: int = 96,
+        horizon: int = 900,
         period: int = 5760,
         lags: Optional[List[int]] = None,
         roll_windows: Optional[List[int]] = None,

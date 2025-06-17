@@ -1,0 +1,68 @@
+2025-06-17 22:10:36,407 - INFO - ========== Experiment 1/2 — lstm_multivar_hs128_do0.2_wd0.0001_20250617_221036 ==========
+2025-06-17 22:10:36,407 - INFO - Parameter set: {'hidden_size': 128, 'dropout': 0.2, 'weight_decay': 0.0001}
+2025-06-17 22:10:36,407 - INFO - --- Fold 1/5 ---
+2025-06-17 22:10:36,514 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:137: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:10:36,514 - ERROR - df_imputed = df.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:10:38,369 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:168: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+2025-06-17 22:10:38,370 - ERROR - scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp)
+2025-06-17 22:10:38,467 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:181: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:10:38,471 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:12:23,533 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:12:23,533 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:12:28,923 - INFO - [Epoch 1/1] train_loss=0.25823 val_loss=0.10505
+2025-06-17 22:12:28,930 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:231: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:12:28,930 - ERROR - last_seq = last_seq.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:12:28,969 - INFO - Fold 1: MAE=16.97 RMSE=22.32 MAPE=4.14% on 900 pts
+2025-06-17 22:12:29,674 - INFO - --- Fold 2/5 ---
+2025-06-17 22:12:29,685 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:137: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:12:29,685 - ERROR - df_imputed = df.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:12:29,727 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:168: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+2025-06-17 22:12:29,727 - ERROR - scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp)
+2025-06-17 22:12:29,788 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:181: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:12:29,788 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:14:17,212 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:14:17,212 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:14:22,792 - INFO - [Epoch 1/1] train_loss=0.25071 val_loss=0.14173
+2025-06-17 22:14:22,797 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:231: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:14:22,798 - ERROR - last_seq = last_seq.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:14:22,832 - INFO - Fold 2: MAE=29.71 RMSE=35.95 MAPE=6.79% on 900 pts
+2025-06-17 22:14:23,339 - INFO - --- Fold 3/5 ---
+2025-06-17 22:14:23,348 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:137: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:14:23,348 - ERROR - df_imputed = df.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:14:23,375 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:168: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+2025-06-17 22:14:23,375 - ERROR - scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp)
+2025-06-17 22:14:23,399 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:181: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:14:23,399 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:16:12,176 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:16:12,177 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:16:16,966 - INFO - [Epoch 1/1] train_loss=0.26094 val_loss=0.13245
+2025-06-17 22:16:16,981 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:231: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:16:16,981 - ERROR - last_seq = last_seq.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:16:17,020 - INFO - Fold 3: MAE=20.77 RMSE=25.09 MAPE=4.90% on 900 pts
+2025-06-17 22:16:17,642 - INFO - --- Fold 4/5 ---
+2025-06-17 22:16:17,652 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:137: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:16:17,653 - ERROR - df_imputed = df.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:16:17,678 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:168: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+2025-06-17 22:16:17,678 - ERROR - scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp)
+2025-06-17 22:16:17,702 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:181: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:16:17,702 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:17:59,319 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:17:59,320 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:18:05,290 - INFO - [Epoch 1/1] train_loss=0.24405 val_loss=0.11275
+2025-06-17 22:18:05,297 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:231: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:18:05,297 - ERROR - last_seq = last_seq.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:18:05,340 - INFO - Fold 4: MAE=42.39 RMSE=46.63 MAPE=10.40% on 900 pts
+2025-06-17 22:18:06,312 - INFO - --- Fold 5/5 ---
+2025-06-17 22:18:06,340 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:137: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:18:06,340 - ERROR - df_imputed = df.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:18:06,380 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:168: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+2025-06-17 22:18:06,380 - ERROR - scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp)
+2025-06-17 22:18:06,409 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:181: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:18:06,410 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:19:50,426 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+2025-06-17 22:19:50,427 - ERROR - with torch.cuda.amp.autocast(enabled=self.use_amp):
+2025-06-17 22:19:55,963 - INFO - [Epoch 1/1] train_loss=0.25751 val_loss=0.11086
+2025-06-17 22:19:55,988 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/src/models/lstm_multivariate_forecast.py:231: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+2025-06-17 22:19:55,989 - ERROR - last_seq = last_seq.fillna(method="ffill").fillna(method="bfill")
+2025-06-17 22:19:56,028 - INFO - Fold 5: MAE=33.72 RMSE=41.19 MAPE=8.58% on 900 pts
+2025-06-17 22:19:56,888 - INFO - ===== mean over 5 folds: MAE=28.71 RMSE=34.24 MAPE=6.96% =====

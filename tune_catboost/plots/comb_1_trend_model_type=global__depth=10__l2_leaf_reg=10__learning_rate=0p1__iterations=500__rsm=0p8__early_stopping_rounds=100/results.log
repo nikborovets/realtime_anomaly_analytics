@@ -1,0 +1,12 @@
+2025-06-17 20:21:46,037 - INFO - Начинаю оценку комбинации comb_1_trend_model_type=global__depth=10__l2_leaf_reg=10__learning_rate=0p1__iterations=500__rsm=0p8__early_stopping_rounds=100
+2025-06-17 20:25:25,069 - INFO - Начинаю оценку комбинации comb_1_trend_model_type=global__depth=10__l2_leaf_reg=10__learning_rate=0p1__iterations=500__rsm=0p8__early_stopping_rounds=100
+2025-06-17 20:29:28,686 - INFO - Начинаю оценку комбинации comb_1_trend_model_type=global__depth=10__l2_leaf_reg=10__learning_rate=0p1__iterations=500__rsm=0p8__early_stopping_rounds=100
+2025-06-17 20:30:36,994 - INFO - Fold 1 metrics: {'MAE': 28.46263753026351, 'RMSE': np.float64(39.547073536092725), 'MAPE': 7.706907207109763}
+2025-06-17 20:31:46,266 - INFO - Fold 2 metrics: {'MAE': 12.30379871325814, 'RMSE': np.float64(12.905414658092823), 'MAPE': 3.6133791950070493}
+2025-06-17 20:31:46,471 - INFO - Average CV metrics: {'MAE': np.float64(20.383218121760827), 'RMSE': np.float64(26.226244097092774), 'MAPE': np.float64(5.660143201058406)}
+2025-06-17 20:40:14,319 - INFO - Начинаю оценку комбинации comb_1_trend_model_type=global__depth=10__l2_leaf_reg=10__learning_rate=0p1__iterations=500__rsm=0p8__early_stopping_rounds=100
+2025-06-17 20:41:23,477 - INFO - Fold 1 metrics: {'MAE': 28.46263753026351, 'RMSE': np.float64(39.547073536092725), 'MAPE': 7.706907207109763}
+2025-06-17 20:42:36,921 - INFO - Fold 2 metrics: {'MAE': 12.30379871325814, 'RMSE': np.float64(12.905414658092823), 'MAPE': 3.6133791950070493}
+2025-06-17 20:42:37,126 - INFO - Average CV metrics: {'MAE': np.float64(20.383218121760827), 'RMSE': np.float64(26.226244097092774), 'MAPE': np.float64(5.660143201058406)}
+2025-06-17 20:45:18,739 - INFO - Final model saved to tune_catboost/models/comb_1_trend_model_type=global__depth=10__l2_leaf_reg=10__learning_rate=0p1__iterations=500__rsm=0p8__early_stopping_rounds=100
+2025-06-17 20:45:18,740 - INFO - Final model CatBoost params: {'loss_function': 'RMSE', 'boosting_type': 'Plain', 'l2_leaf_reg': 10, 'depth': 10, 'learning_rate': 0.1, 'iterations': 500, 'rsm': 0.8, 'random_seed': 42, 'early_stopping_rounds': 100, 'verbose': False}
