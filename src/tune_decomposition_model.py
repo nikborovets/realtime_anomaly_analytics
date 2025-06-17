@@ -28,7 +28,11 @@ if not any(isinstance(h, logging.FileHandler) and h.baseFilename.endswith("tunin
     fh_root.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s"))
     root_logger.addHandler(fh_root)
 
-# Можно сохранить вывод и в консоль, но по умолчанию basicConfig уже создаёт StreamHandler.
+# Убедимся, что вывод идёт и в консоль
+if not any(isinstance(h, logging.StreamHandler) for h in root_logger.handlers):
+    sh_root = logging.StreamHandler()
+    sh_root.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s"))
+    root_logger.addHandler(sh_root)
 
 
 def build_param_grid(fast: bool = False) -> List[Dict]:
