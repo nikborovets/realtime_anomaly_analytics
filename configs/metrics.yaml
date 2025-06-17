@@ -14,7 +14,8 @@
 
 # common_delay_p90:          "histogram_quantile(0.9, sum(rate(common_event_delay_bucket[1m])) by (le))"   # ← целевая
 # heartbeat_delay_p90:       "histogram_quantile(0.9, sum(rate(heartbeat_delay_bucket[1m])) by (le))"
-common_cad:                'common_cad{instance="consumer_from_ws_with_metrics:8000", job="consumer_from_ws_with_metrics", service="castle"}'
+# common_cad:                'common_cad{instance="consumer_from_ws_with_metrics:8000", job="consumer_from_ws_with_metrics", service="castle"}'
+common_cad_avg1h:                'avg_over_time(common_cad{instance="consumer_from_ws_with_metrics:8000", job="consumer_from_ws_with_metrics", service="castle"}[1h])'
 
 # seq_health_bad_ratio:      "1 - histogram_quantile(0.0, sum(rate(seq_events_health_bucket[1m])) by (le))" # доля некорректных
 
