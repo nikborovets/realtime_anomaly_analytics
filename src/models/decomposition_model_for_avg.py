@@ -65,10 +65,10 @@ class DecompositionImprovedTrendModel:
         self.cb_params = {
             "loss_function": "RMSE",
             "boosting_type": "Plain",
-            "l2_leaf_reg": 15.0,
-            "depth": 15,
+            "l2_leaf_reg": 10.0,
+            "depth": 12,
             "learning_rate": 0.05,
-            "iterations": 7000,
+            "iterations": 3000,
             "rsm": 0.8,
             "random_seed": random_state,
             "early_stopping_rounds": 300,
