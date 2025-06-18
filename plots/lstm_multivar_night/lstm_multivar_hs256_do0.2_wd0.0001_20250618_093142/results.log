@@ -56,3 +56,7 @@
 2025-06-18 16:21:26,129 - INFO - Early stop at epoch 8
 2025-06-18 16:21:26,353 - INFO - Fold 4: MAE=46.33 RMSE=50.67 MAPE=11.43% on 900 pts
 2025-06-18 16:21:27,211 - INFO - --- Fold 5/5 ---
+2025-06-18 16:31:08,100 - INFO - [Epoch 1/30] train_loss=0.25872 val_loss=0.18169
+2025-06-18 16:41:40,313 - INFO - [Epoch 2/30] train_loss=0.24326 val_loss=0.11243
+2025-06-18 16:52:06,076 - INFO - [Epoch 3/30] train_loss=0.20443 val_loss=0.22296
+2025-06-18 17:02:50,048 - INFO - [Epoch 4/30] train_loss=0.18329 val_loss=0.15873

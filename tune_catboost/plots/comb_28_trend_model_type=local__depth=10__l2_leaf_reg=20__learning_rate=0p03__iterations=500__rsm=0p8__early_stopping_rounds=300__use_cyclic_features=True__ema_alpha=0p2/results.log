@@ -3,3 +3,7 @@
 2025-06-18 16:16:04,836 - INFO - Fold 2 metrics: {'MAE': 24.787517204018457, 'RMSE': np.float64(29.099604389255976), 'MAPE': 5.9773183175637605}
 2025-06-18 16:21:10,596 - INFO - Fold 3 metrics: {'MAE': 19.772981194197143, 'RMSE': np.float64(22.58668197064027), 'MAPE': 4.853173833971067}
 2025-06-18 16:25:43,549 - INFO - Fold 4 metrics: {'MAE': 41.463308551206914, 'RMSE': np.float64(49.745394328535866), 'MAPE': 9.563585452784325}
+2025-06-18 16:30:40,212 - INFO - Fold 5 metrics: {'MAE': 62.07320317385287, 'RMSE': np.float64(66.24563457656687), 'MAPE': 16.588044111533705}
+2025-06-18 16:30:40,441 - INFO - Average CV metrics: {'MAE': np.float64(35.996678266936854), 'RMSE': np.float64(41.09016170854464), 'MAPE': np.float64(8.904304881544759)}
+2025-06-18 16:34:33,269 - INFO - Final model saved to tune_catboost/models/comb_28_trend_model_type=local__depth=10__l2_leaf_reg=20__learning_rate=0p03__iterations=500__rsm=0p8__early_stopping_rounds=300__use_cyclic_features=True__ema_alpha=0p2
+2025-06-18 16:34:33,270 - INFO - Final model CatBoost params: {'loss_function': 'RMSE', 'boosting_type': 'Plain', 'l2_leaf_reg': 20, 'depth': 10, 'learning_rate': 0.03, 'iterations': 500, 'rsm': 0.8, 'random_seed': 42, 'early_stopping_rounds': 300, 'verbose': False}
