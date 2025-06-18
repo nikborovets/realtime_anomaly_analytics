@@ -35,3 +35,4 @@ def plot_history_forecast(history: pd.Series,
         plt.show()
     if filename:
         plt.savefig(filename)
+        plt.close()

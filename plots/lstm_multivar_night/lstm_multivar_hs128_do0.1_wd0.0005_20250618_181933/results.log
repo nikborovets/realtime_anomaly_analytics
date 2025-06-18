@@ -1,0 +1,5 @@
+2025-06-18 18:19:33,479 - INFO - ========== Experiment 6/10 — lstm_multivar_hs128_do0.1_wd0.0005_20250618_181933 ==========
+2025-06-18 18:19:33,479 - INFO - Parameter set: {'hidden_size': 128, 'dropout': 0.1, 'weight_decay': 0.0005}
+2025-06-18 18:19:33,479 - INFO - --- Fold 1/5 ---
+2025-06-18 18:21:11,954 - INFO - [Epoch 1/30] train_loss=0.26421 val_loss=0.11023
+2025-06-18 18:22:51,730 - INFO - [Epoch 2/30] train_loss=0.20776 val_loss=0.13197
