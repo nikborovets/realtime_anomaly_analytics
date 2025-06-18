@@ -84,7 +84,7 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
             "rsm": 0.75,
             "early_stopping_rounds": 300,
             "use_cyclic_features": False,
-            "ema_alpha": 0.1,
+            "ema_alpha": 0.3,
         })
 
         # 3-6: local, окно 960 и 5760, по две крайние конфигурации
