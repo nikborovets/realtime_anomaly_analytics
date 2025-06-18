@@ -1,0 +1,11 @@
+2025-06-18 09:31:42,875 - INFO - ========== Experiment 5/10 — lstm_multivar_hs256_do0.2_wd0.0001_20250618_093142 ==========
+2025-06-18 09:31:42,875 - INFO - Parameter set: {'hidden_size': 256, 'dropout': 0.2, 'weight_decay': 0.0001}
+2025-06-18 09:31:42,875 - INFO - --- Fold 1/5 ---
+2025-06-18 09:38:57,270 - INFO - [Epoch 1/30] train_loss=0.26280 val_loss=0.10735
+2025-06-18 09:45:49,774 - INFO - [Epoch 2/30] train_loss=0.19975 val_loss=0.15349
+2025-06-18 09:52:54,047 - INFO - [Epoch 3/30] train_loss=0.29648 val_loss=0.11455
+2025-06-18 10:00:32,254 - INFO - [Epoch 4/30] train_loss=0.25719 val_loss=0.12788
+2025-06-18 10:08:18,329 - INFO - [Epoch 5/30] train_loss=0.25566 val_loss=0.10924
+2025-06-18 10:16:01,018 - INFO - [Epoch 6/30] train_loss=0.25951 val_loss=0.10924
+2025-06-18 10:23:17,640 - INFO - [Epoch 7/30] train_loss=0.22301 val_loss=0.10325
+2025-06-18 10:30:01,650 - INFO - [Epoch 8/30] train_loss=0.22514 val_loss=0.10777

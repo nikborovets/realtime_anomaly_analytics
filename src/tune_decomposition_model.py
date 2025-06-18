@@ -1,5 +1,6 @@
 import itertools
 import logging
+import ast
 from typing import Dict, List
 
 import numpy as np
@@ -53,24 +54,62 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
             "rsm": [0.8],
             "early_stopping_rounds": [100],
         }
+        # Разворачиваем grid в список словарей для fast-режима
+        keys, values = zip(*param_grid.items())
+        combos = [dict(zip(keys, v)) for v in itertools.product(*values)]
     else:
-        param_grid = {
-            # Параметры для самого класса
-            "trend_model_type": ["global", "local"],
-            "trend_window_size": [960, 5760],  # актуально только при local
+        # КРАЕВЫЕ 6 КОМБИНАЦИЙ (минимум времени на запуск)
+        combos = []
 
-            # CatBoost-параметры
-            "depth": [12, 15],
-            "l2_leaf_reg": [10, 20, 30],
-            "learning_rate": [0.05, 0.03],
-            "iterations": [3000],
-            "rsm": [0.8, 0.9],
-            "early_stopping_rounds": [300, 500, 1000],
-        }
+        # 1-2: global с «мягкой» и «жёсткой» регуляризацией
+        combos.append({
+            "trend_model_type": "global",
+            "trend_window_size": 960,
+            "depth": 10,
+            "l2_leaf_reg": 20,
+            "learning_rate": 0.03,
+            "iterations": 3000,
+            "rsm": 0.8,
+            "early_stopping_rounds": 500,
+            "use_cyclic_features": True,
+        })
+        combos.append({
+            "trend_model_type": "global",
+            "trend_window_size": 960,
+            "depth": 15,
+            "l2_leaf_reg": 40,
+            "learning_rate": 0.015,
+            "iterations": 3000,
+            "rsm": 0.75,
+            "early_stopping_rounds": 1000,
+            "use_cyclic_features": False,
+        })
 
-    # Разворачиваем grid в список словарей
-    keys, values = zip(*param_grid.items())
-    combos = [dict(zip(keys, v)) for v in itertools.product(*values)]
+        # 3-6: local, окно 960 и 5760, по две крайние конфигурации
+        for win in [960, 5760]:
+            combos.append({
+                "trend_model_type": "local",
+                "trend_window_size": win,
+                "depth": 10,
+                "l2_leaf_reg": 20,
+                "learning_rate": 0.03,
+                "iterations": 3000,
+                "rsm": 0.8,
+                "early_stopping_rounds": 500,
+                "use_cyclic_features": True,
+            })
+            combos.append({
+                "trend_model_type": "local",
+                "trend_window_size": win,
+                "depth": 15,
+                "l2_leaf_reg": 40,
+                "learning_rate": 0.015,
+                "iterations": 3000,
+                "rsm": 0.75,
+                "early_stopping_rounds": 1000,
+                "use_cyclic_features": False,
+            })
+
     return combos
 
 
@@ -121,6 +160,7 @@ def evaluate_params(
             "iterations": params["iterations"],
             "rsm": params["rsm"],
             "early_stopping_rounds": params["early_stopping_rounds"],
+            "use_cyclic_features": params["use_cyclic_features"],
         }
 
         model = DecompositionImprovedTrendModel(
@@ -180,6 +220,7 @@ def evaluate_params(
         iterations=params["iterations"],
         rsm=params["rsm"],
         early_stopping_rounds=params["early_stopping_rounds"],
+        use_cyclic_features=params["use_cyclic_features"],
     )
     final_model.fit(df_train_val, target_col=target_col, val_df=df_train_val_val)
     y_pred = final_model.predict(df_hist=pd.concat([df_train_val, df_train_val_val]))
@@ -207,6 +248,24 @@ def evaluate_params(
     return avg_metrics
 
 
+def _load_evaluated_param_sets(log_path: Path = LOGS_ROOT / "tuning.log") -> set:
+    """Считывает tuning.log и возвращает set из каноничных tuple(sorted(dict.items()))."""
+
+    evaluated = set()
+    if not log_path.exists():
+        return evaluated
+
+    for line in log_path.read_text().splitlines():
+        if "Параметры:" in line:
+            try:
+                dict_str = line.split("Параметры:")[1].strip()
+                params = ast.literal_eval(dict_str)
+                evaluated.add(tuple(sorted(params.items())))
+            except Exception:
+                continue
+    return evaluated
+
+
 def tune_model(
     df_full: pd.DataFrame,
     target_col: str,
@@ -215,13 +274,22 @@ def tune_model(
     fast_grid: bool = False,
 ):
     all_params = build_param_grid(fast=fast_grid)
-    logging.info("Всего комбинаций: %d", len(all_params))
+    # --- фильтруем уже протестированное ---
+    evaluated = _load_evaluated_param_sets()
+    params_to_try = [p for p in all_params if tuple(sorted(p.items())) not in evaluated]
+
+    if not params_to_try:
+        logging.info("Все комбинации уже были оценены. Нечего делать — выхожу.")
+        return pd.DataFrame()
+
+    logging.info("Всего комбинаций: %d (из них новых %d)", len(all_params), len(params_to_try))
 
     results = []
-    for idx, params in enumerate(all_params, 1):
-        logging.info("==== Комбинация %d/%d ====" , idx, len(all_params))
+    for idx, params in enumerate(params_to_try, 1):
+        new_inx = idx + 20
+        logging.info("==== Комбинация %d/%d ====" , new_inx, len(params_to_try)+20)
         logging.info("Параметры: %s", params)
-        metrics = evaluate_params(params, df_full, target_col, idx, n_splits, test_size)
+        metrics = evaluate_params(params, df_full, target_col, new_inx, n_splits, test_size)
         logging.info("Средние метрики: %s", metrics)
         results.append({**params, **metrics})
 
