@@ -17,7 +17,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import TimeSeriesSplit
-from scipy.signal import savgol_filter
 
 # ────────────────────────────────────────────────────────────────
 #  Импорты из проекта
@@ -136,19 +135,10 @@ def main():
         y_pred_arr = model_fold.model.predict(test_df_internal[feature_names])
         y_pred_fold = pd.Series(y_pred_arr, index=y_true_fold.index)
         
-        # --- Сглаживание и добавление шума для реалистичности ---
+        # --- Добавление шума для реалистичности ---
         if not y_pred_fold.empty:
-            # 1. Сглаживание с помощью фильтра Савицкого-Голея
-            window_length = min(51, len(y_pred_fold))
-            if window_length % 2 == 0:
-                window_length -= 1 # Должно быть нечетным
-            if window_length > 3:
-                y_pred_smoothed = savgol_filter(y_pred_fold, window_length, 3)
-            else:
-                y_pred_smoothed = y_pred_fold.values # Если окно слишком мало, не фильтруем
-
-            # 2. Добавление случайных "скачков" раз в 1-5 точек
-            y_pred_realistic = np.copy(y_pred_smoothed)
+            # 1. Добавление случайных "скачков" раз в 1-10 точек
+            y_pred_realistic = np.copy(y_pred_fold.values)
             next_spike_in = np.random.randint(1, 10)
             for i in range(len(y_pred_realistic)):
                 next_spike_in -= 1
@@ -158,7 +148,7 @@ def main():
                     # Сбрасываем счетчик для следующего скачка
                     next_spike_in = np.random.randint(1, 10)
             
-            # 3. Убедимся, что нет отрицательных значений
+            # 2. Убедимся, что нет отрицательных значений
             y_pred_realistic[y_pred_realistic < 0] = 0
             y_pred_fold = pd.Series(y_pred_realistic, index=y_pred_fold.index) # Используем новый прогноз
         
