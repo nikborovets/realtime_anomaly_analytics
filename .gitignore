@@ -44,3 +44,14 @@ statsforecast_model.pkl
 # autoarima_training_4h.log
 # autoarima_training.log
 catboost_info/
+
+model1/
+model2/
+model3/
+model4/
+model5/
+model6/
+model7/
+model8/
+model9/
+model10/

@@ -1,0 +1,57 @@
+2025-06-18 19:28:04,009 - INFO - ========== Experiment 7/10 — lstm_multivar_hs64_do0.2_wd0.0005_20250618_192804 ==========
+2025-06-18 19:28:04,009 - INFO - Parameter set: {'hidden_size': 64, 'dropout': 0.2, 'weight_decay': 0.0005}
+2025-06-18 19:28:04,010 - INFO - --- Fold 1/5 ---
+2025-06-18 19:29:03,813 - INFO - [Epoch 1/30] train_loss=0.27024 val_loss=0.12132
+2025-06-18 19:30:04,267 - INFO - [Epoch 2/30] train_loss=0.21783 val_loss=0.10572
+2025-06-18 19:31:04,883 - INFO - [Epoch 3/30] train_loss=0.21185 val_loss=0.09833
+2025-06-18 19:32:05,653 - INFO - [Epoch 4/30] train_loss=0.19972 val_loss=0.12029
+2025-06-18 19:33:06,566 - INFO - [Epoch 5/30] train_loss=0.19503 val_loss=0.10993
+2025-06-18 19:34:07,460 - INFO - [Epoch 6/30] train_loss=0.19940 val_loss=0.13107
+2025-06-18 19:35:08,132 - INFO - [Epoch 7/30] train_loss=0.20195 val_loss=0.12287
+2025-06-18 19:36:08,987 - INFO - [Epoch 8/30] train_loss=0.18790 val_loss=0.11819
+2025-06-18 19:37:09,897 - INFO - Early stop at epoch 9
+2025-06-18 19:37:09,915 - INFO - Fold 1: MAE=15.35 RMSE=21.90 MAPE=3.79% on 900 pts
+2025-06-18 19:37:10,373 - INFO - --- Fold 2/5 ---
+2025-06-18 19:38:10,789 - INFO - [Epoch 1/30] train_loss=0.27014 val_loss=0.10457
+2025-06-18 19:39:11,800 - INFO - [Epoch 2/30] train_loss=0.21670 val_loss=0.10641
+2025-06-18 19:40:13,023 - INFO - [Epoch 3/30] train_loss=0.22388 val_loss=0.14570
+2025-06-18 19:41:14,403 - INFO - [Epoch 4/30] train_loss=0.19798 val_loss=0.14353
+2025-06-18 19:42:16,003 - INFO - [Epoch 5/30] train_loss=0.18946 val_loss=0.15228
+2025-06-18 19:43:17,565 - INFO - [Epoch 6/30] train_loss=0.19168 val_loss=0.11627
+2025-06-18 19:44:18,962 - INFO - Early stop at epoch 7
+2025-06-18 19:44:18,980 - INFO - Fold 2: MAE=25.04 RMSE=29.34 MAPE=5.84% on 900 pts
+2025-06-18 19:44:19,442 - INFO - --- Fold 3/5 ---
+2025-06-18 19:45:20,123 - INFO - [Epoch 1/30] train_loss=0.27108 val_loss=0.11711
+2025-06-18 19:46:21,904 - INFO - [Epoch 2/30] train_loss=0.23972 val_loss=0.10941
+2025-06-18 19:47:23,977 - INFO - [Epoch 3/30] train_loss=0.19740 val_loss=0.13324
+2025-06-18 19:48:26,228 - INFO - [Epoch 4/30] train_loss=0.19700 val_loss=0.14540
+2025-06-18 19:49:28,679 - INFO - [Epoch 5/30] train_loss=0.18716 val_loss=0.12308
+2025-06-18 19:50:30,858 - INFO - [Epoch 6/30] train_loss=0.15863 val_loss=0.10964
+2025-06-18 19:51:32,913 - INFO - [Epoch 7/30] train_loss=0.19221 val_loss=0.20572
+2025-06-18 19:52:35,061 - INFO - Early stop at epoch 8
+2025-06-18 19:52:35,080 - INFO - Fold 3: MAE=19.94 RMSE=23.37 MAPE=4.82% on 900 pts
+2025-06-18 19:52:35,585 - INFO - --- Fold 4/5 ---
+2025-06-18 19:53:37,205 - INFO - [Epoch 1/30] train_loss=0.26809 val_loss=0.10105
+2025-06-18 19:54:39,828 - INFO - [Epoch 2/30] train_loss=0.23048 val_loss=0.14290
+2025-06-18 19:55:42,647 - INFO - [Epoch 3/30] train_loss=0.24338 val_loss=0.19902
+2025-06-18 19:56:45,795 - INFO - [Epoch 4/30] train_loss=0.26227 val_loss=0.10158
+2025-06-18 19:57:48,918 - INFO - [Epoch 5/30] train_loss=0.22050 val_loss=0.09828
+2025-06-18 19:58:52,058 - INFO - [Epoch 6/30] train_loss=0.20938 val_loss=0.14024
+2025-06-18 19:59:54,656 - INFO - [Epoch 7/30] train_loss=0.17053 val_loss=0.11070
+2025-06-18 20:00:57,546 - INFO - [Epoch 8/30] train_loss=0.16504 val_loss=0.10833
+2025-06-18 20:02:00,672 - INFO - [Epoch 9/30] train_loss=0.16870 val_loss=0.11915
+2025-06-18 20:03:03,861 - INFO - [Epoch 10/30] train_loss=0.17020 val_loss=0.12261
+2025-06-18 20:04:06,940 - INFO - Early stop at epoch 11
+2025-06-18 20:04:06,959 - INFO - Fold 4: MAE=46.97 RMSE=50.90 MAPE=11.97% on 900 pts
+2025-06-18 20:04:07,447 - INFO - --- Fold 5/5 ---
+2025-06-18 20:05:10,036 - INFO - [Epoch 1/30] train_loss=0.27539 val_loss=0.10630
+2025-06-18 20:06:13,462 - INFO - [Epoch 2/30] train_loss=0.23485 val_loss=0.10641
+2025-06-18 20:07:16,978 - INFO - [Epoch 3/30] train_loss=0.22068 val_loss=0.09523
+2025-06-18 20:08:20,676 - INFO - [Epoch 4/30] train_loss=0.17562 val_loss=0.14197
+2025-06-18 20:09:24,577 - INFO - [Epoch 5/30] train_loss=0.19784 val_loss=0.13455
+2025-06-18 20:10:28,510 - INFO - [Epoch 6/30] train_loss=0.20270 val_loss=0.16663
+2025-06-18 20:11:32,379 - INFO - [Epoch 7/30] train_loss=0.20150 val_loss=0.11338
+2025-06-18 20:12:36,121 - INFO - [Epoch 8/30] train_loss=0.16929 val_loss=0.19465
+2025-06-18 20:13:40,027 - INFO - Early stop at epoch 9
+2025-06-18 20:13:40,046 - INFO - Fold 5: MAE=29.67 RMSE=38.96 MAPE=7.71% on 900 pts
+2025-06-18 20:13:40,541 - INFO - ===== mean over 5 folds: MAE=27.39 RMSE=32.89 MAPE=6.82% =====

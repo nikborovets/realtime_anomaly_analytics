@@ -1,0 +1,39 @@
+2025-06-18 20:35:15,674 - INFO - root - Загрузка и очистка данных...
+2025-06-18 20:35:15,707 - INFO - root - Разделение данных...
+2025-06-18 20:35:17,343 - INFO - root - Размер обучающей выборки: (72593, 12, 1), (72593,)
+2025-06-18 20:35:17,343 - INFO - root - Размер валидационной выборки: (9064, 12, 1), (9064,)
+2025-06-18 20:35:17,343 - INFO - root - Размер отложенной выборки: (9064, 12, 1), (9064,)
+2025-06-18 20:35:17,343 - INFO - root - Построение модели...
+2025-06-18 20:35:19,728 - INFO - root - Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm (LSTM)                          │ (None, 64)                  │          16,896 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 8)                   │             520 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 (Dense)                      │ (None, 1)                   │               9 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 17,425 (68.07 KB)
+ Trainable params: 17,425 (68.07 KB)
+ Non-trainable params: 0 (0.00 B)
+
+2025-06-18 20:35:19,737 - INFO - root - Обучение модели...
+2025-06-18 20:35:39,938 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:35:59,448 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:36:18,448 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:36:35,885 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:36:53,730 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:37:11,031 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:37:28,622 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:37:46,297 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:38:04,294 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:40:06,897 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:46:48,969 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:47:23,455 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:49:08,153 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:50:00,582 - WARNING - absl - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-18 20:50:00,664 - INFO - root - Оценка на отложенной выборке...
+2025-06-18 20:50:00,738 - WARNING - absl - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-18 20:50:01,679 - INFO - root - Сохранение графика прогноза на отложенной выборке...
+2025-06-18 20:50:01,963 - INFO - root - Скрипт завершен. Модель сохранена в models/lstm_univariate_20250618_203519, графики в plots/lstm_univariate_20250618_203519
