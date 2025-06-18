@@ -34,3 +34,5 @@
 2025-06-18 13:00:02,618 - INFO - [Epoch 1/30] train_loss=0.28402 val_loss=0.15112
 2025-06-18 13:06:41,695 - INFO - [Epoch 2/30] train_loss=0.26278 val_loss=0.11092
 2025-06-18 13:12:59,326 - INFO - [Epoch 3/30] train_loss=0.22909 val_loss=0.12559
+2025-06-18 13:23:16,042 - INFO - [Epoch 4/30] train_loss=0.18333 val_loss=0.20771
+2025-06-18 13:34:36,010 - INFO - [Epoch 5/30] train_loss=1.04222 val_loss=0.67356

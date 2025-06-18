@@ -46,6 +46,7 @@ class DecompositionImprovedTrendModel:
 
         # Дополнительные параметры фичеинжиниринга
         self.use_cyclic_features = cb_params.pop('use_cyclic_features', True)
+        self.ema_alpha = cb_params.pop('ema_alpha', 0.1)
 
         self.scaler_ = None
 
@@ -212,7 +213,7 @@ class DecompositionImprovedTrendModel:
         
         last_known_residual = resid_hist.iloc[-1]
         
-        smoothed_residuals = pd.Series(predictions_residuals_unscaled).ewm(alpha=0.1).mean()
+        smoothed_residuals = pd.Series(predictions_residuals_unscaled).ewm(alpha=self.ema_alpha).mean()
         initial_offset = last_known_residual - smoothed_residuals.iloc[0]
         final_residuals = smoothed_residuals + initial_offset
 

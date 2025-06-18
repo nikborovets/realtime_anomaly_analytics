@@ -72,6 +72,7 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
             "rsm": 0.8,
             "early_stopping_rounds": 500,
             "use_cyclic_features": True,
+            "ema_alpha": 0.2,
         })
         combos.append({
             "trend_model_type": "global",
@@ -81,8 +82,9 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
             "learning_rate": 0.015,
             "iterations": 3000,
             "rsm": 0.75,
-            "early_stopping_rounds": 1000,
+            "early_stopping_rounds": 300,
             "use_cyclic_features": False,
+            "ema_alpha": 0.1,
         })
 
         # 3-6: local, окно 960 и 5760, по две крайние конфигурации
@@ -95,8 +97,9 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
                 "learning_rate": 0.03,
                 "iterations": 3000,
                 "rsm": 0.8,
-                "early_stopping_rounds": 500,
+                "early_stopping_rounds": 300,
                 "use_cyclic_features": True,
+                "ema_alpha": 0.2,
             })
             combos.append({
                 "trend_model_type": "local",
@@ -106,8 +109,9 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
                 "learning_rate": 0.015,
                 "iterations": 3000,
                 "rsm": 0.75,
-                "early_stopping_rounds": 1000,
+                "early_stopping_rounds": 300,
                 "use_cyclic_features": False,
+                "ema_alpha": 0.1,
             })
 
     return combos
@@ -161,6 +165,7 @@ def evaluate_params(
             "rsm": params["rsm"],
             "early_stopping_rounds": params["early_stopping_rounds"],
             "use_cyclic_features": params["use_cyclic_features"],
+            "ema_alpha": params["ema_alpha"],
         }
 
         model = DecompositionImprovedTrendModel(
@@ -221,6 +226,7 @@ def evaluate_params(
         rsm=params["rsm"],
         early_stopping_rounds=params["early_stopping_rounds"],
         use_cyclic_features=params["use_cyclic_features"],
+        ema_alpha=params["ema_alpha"],
     )
     final_model.fit(df_train_val, target_col=target_col, val_df=df_train_val_val)
     y_pred = final_model.predict(df_hist=pd.concat([df_train_val, df_train_val_val]))
