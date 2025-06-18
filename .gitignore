@@ -41,6 +41,6 @@ cache/
 *.joblib
 statsforecast_model.pkl
 
-autoarima_training_4h.log
-autoarima_training.log
+# autoarima_training_4h.log
+# autoarima_training.log
 catboost_info/

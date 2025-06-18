@@ -1,0 +1,647 @@
+2025-06-16 10:27:08,466 - INFO - Графики будут сохраняться в директорию: plots_4h
+2025-06-16 10:27:08,466 - INFO - Загрузка данных...
+2025-06-16 10:27:08,940 - INFO - Данные загружены. Размер: 90643. Частота: 15 секунд.
+2025-06-16 10:27:08,940 - INFO - Размер для обучения и CV: 89743
+2025-06-16 10:27:08,941 - INFO - Размер для hold-out теста: 900
+2025-06-16 10:27:08,941 - INFO - Запуск кросс-валидации на 3 фолдах...
+2025-06-16 10:27:08,941 - INFO - --- Фолд 1/3 ---
+2025-06-16 10:27:08,947 - INFO - Обрезаем историю обучения с 89473 до 2000 точек.
+2025-06-16 10:27:08,959 - INFO - Обучение на 2000 точках, прогноз на 90 точек...
+2025-06-16 10:27:10,092 - INFO - Метрики на фолде 1: {'MAE': 369.82, 'RMSE': np.float64(525.53), 'MAPE': 12.61}
+2025-06-16 10:27:10,943 - INFO - График сохранен в plots_4h/cv_fold_1_forecast_4h.png
+2025-06-16 10:27:10,944 - INFO - --- Фолд 2/3 ---
+2025-06-16 10:27:10,954 - INFO - Обрезаем историю обучения с 89563 до 2000 точек.
+2025-06-16 10:27:10,955 - INFO - Обучение на 2000 точках, прогноз на 90 точек...
+2025-06-16 10:27:11,718 - INFO - Метрики на фолде 2: {'MAE': 1334.77, 'RMSE': np.float64(1471.12), 'MAPE': 33.36}
+2025-06-16 10:27:12,433 - INFO - График сохранен в plots_4h/cv_fold_2_forecast_4h.png
+2025-06-16 10:27:12,434 - INFO - --- Фолд 3/3 ---
+2025-06-16 10:27:12,439 - INFO - Обрезаем историю обучения с 89653 до 2000 точек.
+2025-06-16 10:27:12,441 - INFO - Обучение на 2000 точках, прогноз на 90 точек...
+2025-06-16 10:27:13,331 - INFO - Метрики на фолде 3: {'MAE': 539.35, 'RMSE': np.float64(600.44), 'MAPE': 14.42}
+2025-06-16 10:27:13,944 - INFO - График сохранен в plots_4h/cv_fold_3_forecast_4h.png
+2025-06-16 10:27:13,960 - INFO - --- Средние метрики CV: {'MAE': np.float64(747.98), 'RMSE': np.float64(865.69), 'MAPE': np.float64(20.13)} ---
+2025-06-16 10:27:13,961 - INFO - Обучение финальной модели на всех данных train+val...
+
+
+
+2025-06-16 10:37:36,068 - INFO - Графики будут сохраняться в директорию: plots_4h
+2025-06-16 10:37:36,078 - INFO - Загрузка данных...
+2025-06-16 10:37:36,462 - INFO - Данные загружены. Размер: 90643. Частота: 15 секунд.
+2025-06-16 10:37:36,470 - INFO - Размер для обучения и CV: 89743
+2025-06-16 10:37:36,470 - INFO - Размер для hold-out теста: 900
+2025-06-16 10:37:36,471 - INFO - Запуск кросс-валидации на 3 фолдах...
+2025-06-16 10:37:36,471 - INFO - --- Фолд 1/3 ---
+2025-06-16 10:37:36,476 - INFO - Обрезаем историю обучения с 89473 до 2000 точек.
+2025-06-16 10:37:36,479 - INFO - Обучение на 2000 точках, прогноз на 90 точек...
+2025-06-16 10:37:36,683 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:36,699 - ERROR - warnings.warn(
+2025-06-16 10:37:36,715 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:36,716 - ERROR - warnings.warn(
+2025-06-16 10:37:36,757 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:36,758 - ERROR - warnings.warn(
+2025-06-16 10:37:36,828 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:36,843 - ERROR - warnings.warn(
+2025-06-16 10:37:36,889 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:36,889 - ERROR - warnings.warn(
+2025-06-16 10:37:36,914 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:36,915 - ERROR - warnings.warn(
+2025-06-16 10:37:36,963 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:36,964 - ERROR - warnings.warn(
+2025-06-16 10:37:36,978 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:36,979 - ERROR - warnings.warn(
+2025-06-16 10:37:37,037 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,040 - ERROR - warnings.warn(
+2025-06-16 10:37:37,196 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,211 - ERROR - warnings.warn(
+2025-06-16 10:37:37,346 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,347 - ERROR - warnings.warn(
+2025-06-16 10:37:37,397 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,397 - ERROR - warnings.warn(
+2025-06-16 10:37:37,441 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,441 - ERROR - warnings.warn(
+2025-06-16 10:37:37,476 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,476 - ERROR - warnings.warn(
+2025-06-16 10:37:37,612 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,613 - ERROR - warnings.warn(
+2025-06-16 10:37:37,665 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,690 - ERROR - warnings.warn(
+2025-06-16 10:37:37,713 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:37,724 - ERROR - warnings.warn(
+2025-06-16 10:37:37,965 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:384: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 10:37:37,965 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 10:37:37,966 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:440: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 10:37:37,966 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 10:37:37,975 - INFO - Метрики на фолде 1: {'MAE': 369.82, 'RMSE': np.float64(525.53), 'MAPE': 12.61}
+2025-06-16 10:37:38,651 - INFO - График сохранен в plots_4h/cv_fold_1_forecast_4h.png
+2025-06-16 10:37:38,665 - INFO - --- Фолд 2/3 ---
+2025-06-16 10:37:38,672 - INFO - Обрезаем историю обучения с 89563 до 2000 точек.
+2025-06-16 10:37:38,673 - INFO - Обучение на 2000 точках, прогноз на 90 точек...
+2025-06-16 10:37:38,700 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:38,701 - ERROR - warnings.warn(
+2025-06-16 10:37:38,708 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:38,708 - ERROR - warnings.warn(
+2025-06-16 10:37:38,715 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:38,716 - ERROR - warnings.warn(
+2025-06-16 10:37:38,728 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:38,728 - ERROR - warnings.warn(
+2025-06-16 10:37:38,830 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:38,843 - ERROR - warnings.warn(
+2025-06-16 10:37:38,892 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:38,903 - ERROR - warnings.warn(
+2025-06-16 10:37:38,958 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:38,959 - ERROR - warnings.warn(
+2025-06-16 10:37:39,013 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,014 - ERROR - warnings.warn(
+2025-06-16 10:37:39,084 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,085 - ERROR - warnings.warn(
+2025-06-16 10:37:39,117 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,118 - ERROR - warnings.warn(
+2025-06-16 10:37:39,183 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,184 - ERROR - warnings.warn(
+2025-06-16 10:37:39,215 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,216 - ERROR - warnings.warn(
+2025-06-16 10:37:39,239 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,239 - ERROR - warnings.warn(
+2025-06-16 10:37:39,245 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,247 - ERROR - warnings.warn(
+2025-06-16 10:37:39,267 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,268 - ERROR - warnings.warn(
+2025-06-16 10:37:39,291 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,291 - ERROR - warnings.warn(
+2025-06-16 10:37:39,308 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,309 - ERROR - warnings.warn(
+2025-06-16 10:37:39,324 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,325 - ERROR - warnings.warn(
+2025-06-16 10:37:39,347 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,348 - ERROR - warnings.warn(
+2025-06-16 10:37:39,384 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:39,384 - ERROR - warnings.warn(
+2025-06-16 10:37:39,485 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:384: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 10:37:39,486 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 10:37:39,487 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:440: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 10:37:39,489 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 10:37:39,499 - INFO - Метрики на фолде 2: {'MAE': 1334.77, 'RMSE': np.float64(1471.12), 'MAPE': 33.36}
+2025-06-16 10:37:40,250 - INFO - График сохранен в plots_4h/cv_fold_2_forecast_4h.png
+2025-06-16 10:37:40,250 - INFO - --- Фолд 3/3 ---
+2025-06-16 10:37:40,254 - INFO - Обрезаем историю обучения с 89653 до 2000 точек.
+2025-06-16 10:37:40,255 - INFO - Обучение на 2000 точках, прогноз на 90 точек...
+2025-06-16 10:37:40,316 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,317 - ERROR - warnings.warn(
+2025-06-16 10:37:40,353 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,354 - ERROR - warnings.warn(
+2025-06-16 10:37:40,393 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,394 - ERROR - warnings.warn(
+2025-06-16 10:37:40,448 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,449 - ERROR - warnings.warn(
+2025-06-16 10:37:40,492 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,493 - ERROR - warnings.warn(
+2025-06-16 10:37:40,531 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,532 - ERROR - warnings.warn(
+2025-06-16 10:37:40,584 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,585 - ERROR - warnings.warn(
+2025-06-16 10:37:40,655 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,656 - ERROR - warnings.warn(
+2025-06-16 10:37:40,707 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,708 - ERROR - warnings.warn(
+2025-06-16 10:37:40,760 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,760 - ERROR - warnings.warn(
+2025-06-16 10:37:40,778 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,779 - ERROR - warnings.warn(
+2025-06-16 10:37:40,808 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,809 - ERROR - warnings.warn(
+2025-06-16 10:37:40,828 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,829 - ERROR - warnings.warn(
+2025-06-16 10:37:40,841 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,842 - ERROR - warnings.warn(
+2025-06-16 10:37:40,869 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:37:40,870 - ERROR - warnings.warn(
+2025-06-16 10:37:41,021 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:384: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 10:37:41,022 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 10:37:41,023 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:440: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 10:37:41,023 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 10:37:41,034 - INFO - Метрики на фолде 3: {'MAE': 539.35, 'RMSE': np.float64(600.44), 'MAPE': 14.42}
+2025-06-16 10:37:41,561 - INFO - График сохранен в plots_4h/cv_fold_3_forecast_4h.png
+2025-06-16 10:37:41,562 - INFO - --- Средние метрики CV: {'MAE': np.float64(747.98), 'RMSE': np.float64(865.69), 'MAPE': np.float64(20.13)} ---
+2025-06-16 10:37:41,563 - INFO - Обучение финальной модели на всех данных train+val...
+2025-06-16 10:37:46,090 - INFO - Fitting models using approximations to speed things up
+2025-06-16 10:38:08,394 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:38:08,395 - ERROR - warnings.warn(
+2025-06-16 10:38:08,443 - INFO - ARIMA(2,1,2) with drift        :244055.15013654
+2025-06-16 10:38:08,784 - INFO - ARIMA(0,1,0) with drift        :254670.06173326945
+2025-06-16 10:38:13,820 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:38:13,820 - ERROR - warnings.warn(
+2025-06-16 10:38:13,863 - INFO - ARIMA(1,1,0) with drift        :251224.48951598292
+2025-06-16 10:38:16,692 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:38:16,693 - ERROR - warnings.warn(
+2025-06-16 10:38:16,716 - INFO - ARIMA(0,1,1) with drift        :251153.5567762308
+2025-06-16 10:38:16,718 - INFO - ARIMA(0,1,0)                   :254668.0619185022
+2025-06-16 10:38:25,082 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:38:25,083 - ERROR - warnings.warn(
+2025-06-16 10:38:25,130 - INFO - ARIMA(1,1,2) with drift        :249838.58998152363
+2025-06-16 10:38:47,820 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:38:47,821 - ERROR - warnings.warn(
+2025-06-16 10:38:47,845 - INFO - ARIMA(2,1,1) with drift        :244140.2206772499
+2025-06-16 10:39:34,241 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:39:34,243 - ERROR - warnings.warn(
+2025-06-16 10:39:34,271 - INFO - ARIMA(3,1,2) with drift        :243217.2492207376
+2025-06-16 10:39:47,245 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:39:47,255 - ERROR - warnings.warn(
+2025-06-16 10:39:47,281 - INFO - ARIMA(3,1,1) with drift        :243963.70149912225
+2025-06-16 10:40:11,965 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:40:11,966 - ERROR - warnings.warn(
+2025-06-16 10:40:12,005 - INFO - ARIMA(3,1,3) with drift        :242338.04067352417
+2025-06-16 10:40:34,493 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:40:34,503 - ERROR - warnings.warn(
+2025-06-16 10:40:34,550 - INFO - ARIMA(2,1,3) with drift        :242388.7432836208
+2025-06-16 10:40:35,479 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:40:35,481 - ERROR - warnings.warn(
+2025-06-16 10:40:35,483 - INFO - ARIMA(3,1,3)                   :242336.05377859971
+2025-06-16 10:40:36,166 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:40:36,167 - ERROR - warnings.warn(
+2025-06-16 10:40:36,170 - INFO - ARIMA(2,1,3)                   :242386.75467987714
+2025-06-16 10:40:36,938 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:40:36,939 - ERROR - warnings.warn(
+2025-06-16 10:40:36,942 - INFO - ARIMA(3,1,2)                   :243215.2559456565
+2025-06-16 10:40:37,727 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:40:37,728 - ERROR - warnings.warn(
+2025-06-16 10:40:37,731 - INFO - ARIMA(2,1,2)                   :244053.15914402093
+2025-06-16 10:40:37,732 - INFO - Now re-fitting the best model(s) without approximations...
+2025-06-16 10:40:44,131 - INFO - ARIMA(3,1,3)                   :1202745.8042354234
+2025-06-16 10:40:44,134 - WARNING - Не удалось извлечь параметры модели: 'AutoARIMA' object has no attribute 'model_'
+2025-06-16 10:40:44,154 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:384: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 10:40:44,155 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 10:40:44,159 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:440: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 10:40:44,160 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 10:40:44,239 - INFO - Saving StatsForecast object of size 2.74MB.
+2025-06-16 10:40:44,264 - INFO - StatsForecast object saved
+2025-06-16 10:40:44,264 - INFO - Финальная модель сохранена в statsforecast_model.pkl
+2025-06-16 10:40:44,269 - INFO - --- Метрики на Hold-Out сете ---
+2025-06-16 10:40:44,269 - INFO - Hold-Out • MAE=700.5  RMSE=845.2  MAPE=25.36%
+2025-06-16 10:40:44,269 - INFO - Визуализация финального результата...
+2025-06-16 10:40:44,973 - INFO - График сохранен в plots_4h/final_hold_out_forecast_4h.png
+
+
+
+
+
+2025-06-16 10:51:25,411 - INFO - Графики будут сохраняться в директорию: plots_4h
+2025-06-16 10:51:25,411 - INFO - Загрузка данных...
+2025-06-16 10:51:25,800 - INFO - Данные загружены. Размер: 90643. Частота: 15 секунд.
+2025-06-16 10:51:25,800 - INFO - Размер для обучения и CV: 89743
+2025-06-16 10:51:25,801 - INFO - Размер для hold-out теста: 900
+2025-06-16 10:51:25,801 - INFO - Запуск кросс-валидации на 3 фолдах...
+2025-06-16 10:51:25,801 - INFO - --- Фолд 1/3 ---
+2025-06-16 10:51:25,807 - INFO - Обрезаем историю обучения с 89473 до 1440 точек.
+2025-06-16 10:51:25,807 - INFO - Обучение на 1440 точках, прогноз на 90 точек...
+2025-06-16 10:51:27,129 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:51:27,129 - ERROR - warnings.warn(
+2025-06-16 10:51:45,344 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:51:45,345 - ERROR - warnings.warn(
+2025-06-16 10:51:58,069 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:51:58,070 - ERROR - warnings.warn(
+2025-06-16 10:52:03,999 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:52:04,000 - ERROR - warnings.warn(
+2025-06-16 10:52:16,082 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:52:16,082 - ERROR - warnings.warn(
+2025-06-16 10:52:28,424 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:52:28,439 - ERROR - warnings.warn(
+2025-06-16 10:52:29,358 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:52:29,359 - ERROR - warnings.warn(
+2025-06-16 10:55:24,696 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:55:24,707 - ERROR - warnings.warn(
+2025-06-16 10:57:49,322 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:57:49,334 - ERROR - warnings.warn(
+2025-06-16 10:57:57,902 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:57:57,903 - ERROR - warnings.warn(
+2025-06-16 10:58:06,265 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:58:06,265 - ERROR - warnings.warn(
+2025-06-16 10:58:06,537 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 10:58:06,537 - ERROR - warnings.warn(
+2025-06-16 11:00:55,140 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:00:55,146 - ERROR - warnings.warn(
+2025-06-16 11:01:10,460 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:01:10,461 - ERROR - warnings.warn(
+2025-06-16 11:01:21,743 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:01:21,743 - ERROR - warnings.warn(
+2025-06-16 11:03:58,214 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:03:58,215 - ERROR - warnings.warn(
+2025-06-16 11:04:09,120 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:04:09,120 - ERROR - warnings.warn(
+2025-06-16 11:04:20,548 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:04:20,550 - ERROR - warnings.warn(
+2025-06-16 11:04:31,463 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:04:31,463 - ERROR - warnings.warn(
+2025-06-16 11:04:31,829 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:04:31,830 - ERROR - warnings.warn(
+2025-06-16 11:06:40,894 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:06:40,895 - ERROR - warnings.warn(
+2025-06-16 11:06:54,882 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:06:54,882 - ERROR - warnings.warn(
+2025-06-16 11:07:07,488 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:07:07,489 - ERROR - warnings.warn(
+2025-06-16 11:08:52,736 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:08:52,737 - ERROR - warnings.warn(
+2025-06-16 11:09:03,707 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:09:03,708 - ERROR - warnings.warn(
+2025-06-16 11:09:15,910 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:09:15,911 - ERROR - warnings.warn(
+2025-06-16 11:09:25,477 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:09:25,478 - ERROR - warnings.warn(
+2025-06-16 11:09:25,910 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:09:25,911 - ERROR - warnings.warn(
+2025-06-16 11:12:01,938 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:12:01,940 - ERROR - warnings.warn(
+2025-06-16 11:12:16,234 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:12:16,234 - ERROR - warnings.warn(
+2025-06-16 11:12:26,226 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:12:26,227 - ERROR - warnings.warn(
+2025-06-16 11:14:58,190 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:14:58,191 - ERROR - warnings.warn(
+2025-06-16 11:15:04,222 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:15:04,223 - ERROR - warnings.warn(
+2025-06-16 11:15:10,183 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:15:10,183 - ERROR - warnings.warn(
+2025-06-16 11:15:15,828 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:15:15,829 - ERROR - warnings.warn(
+2025-06-16 11:15:21,507 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:15:21,507 - ERROR - warnings.warn(
+2025-06-16 11:15:26,862 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:15:26,862 - ERROR - warnings.warn(
+2025-06-16 11:15:27,092 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:15:27,093 - ERROR - warnings.warn(
+2025-06-16 11:16:56,508 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:16:56,508 - ERROR - warnings.warn(
+2025-06-16 11:17:02,883 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:17:02,884 - ERROR - warnings.warn(
+2025-06-16 11:17:08,633 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:17:08,634 - ERROR - warnings.warn(
+2025-06-16 11:18:31,074 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:18:31,082 - ERROR - warnings.warn(
+2025-06-16 11:18:36,819 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:18:36,819 - ERROR - warnings.warn(
+2025-06-16 11:18:42,571 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:18:42,571 - ERROR - warnings.warn(
+2025-06-16 11:18:48,353 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:18:48,353 - ERROR - warnings.warn(
+2025-06-16 11:18:53,849 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:18:53,849 - ERROR - warnings.warn(
+2025-06-16 11:18:59,640 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:18:59,641 - ERROR - warnings.warn(
+2025-06-16 11:19:05,143 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:19:05,143 - ERROR - warnings.warn(
+2025-06-16 11:19:11,452 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 11:19:11,452 - ERROR - warnings.warn(
+2025-06-16 20:38:12,979 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:384: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 20:38:13,037 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 20:38:13,246 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:440: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 20:38:13,246 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 20:38:13,917 - INFO - Метрики на фолде 1: {'MAE': 261.65, 'RMSE': np.float64(449.46), 'MAPE': 8.49}
+2025-06-16 20:38:16,721 - INFO - График сохранен в plots_4h/cv_fold_1_forecast_4h.png
+2025-06-16 20:38:16,735 - INFO - --- Фолд 2/3 ---
+2025-06-16 20:38:16,773 - INFO - Обрезаем историю обучения с 89563 до 1440 точек.
+2025-06-16 20:38:16,773 - INFO - Обучение на 1440 точках, прогноз на 90 точек...
+2025-06-16 20:38:18,112 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:38:18,112 - ERROR - warnings.warn(
+2025-06-16 20:38:33,007 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:38:33,007 - ERROR - warnings.warn(
+2025-06-16 20:38:46,258 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:38:46,258 - ERROR - warnings.warn(
+2025-06-16 20:38:52,479 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:38:52,480 - ERROR - warnings.warn(
+2025-06-16 20:39:03,968 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:39:03,969 - ERROR - warnings.warn(
+2025-06-16 20:39:16,370 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:39:16,370 - ERROR - warnings.warn(
+2025-06-16 20:41:33,177 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:41:33,206 - ERROR - warnings.warn(
+2025-06-16 20:44:09,080 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:44:09,113 - ERROR - warnings.warn(
+2025-06-16 20:44:09,759 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:44:09,761 - ERROR - warnings.warn(
+2025-06-16 20:46:48,454 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:46:48,463 - ERROR - warnings.warn(
+2025-06-16 20:48:34,575 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:48:34,575 - ERROR - warnings.warn(
+2025-06-16 20:51:05,551 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:51:05,565 - ERROR - warnings.warn(
+2025-06-16 20:51:21,203 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:51:21,203 - ERROR - warnings.warn(
+2025-06-16 20:51:34,848 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:51:34,848 - ERROR - warnings.warn(
+2025-06-16 20:51:49,701 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:51:49,701 - ERROR - warnings.warn(
+2025-06-16 20:52:03,136 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:52:03,137 - ERROR - warnings.warn(
+2025-06-16 20:52:16,559 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:52:16,559 - ERROR - warnings.warn(
+2025-06-16 20:52:32,163 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:52:32,164 - ERROR - warnings.warn(
+2025-06-16 20:52:47,217 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:52:47,218 - ERROR - warnings.warn(
+2025-06-16 20:53:00,792 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:53:00,792 - ERROR - warnings.warn(
+2025-06-16 20:53:14,510 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:53:14,511 - ERROR - warnings.warn(
+2025-06-16 20:53:25,179 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:53:25,180 - ERROR - warnings.warn(
+2025-06-16 20:53:34,140 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:53:34,140 - ERROR - warnings.warn(
+2025-06-16 20:53:34,480 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:53:34,480 - ERROR - warnings.warn(
+2025-06-16 20:55:55,326 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:55:55,326 - ERROR - warnings.warn(
+2025-06-16 20:57:43,048 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:57:43,049 - ERROR - warnings.warn(
+2025-06-16 20:57:48,390 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:57:48,391 - ERROR - warnings.warn(
+2025-06-16 20:57:54,184 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:57:54,184 - ERROR - warnings.warn(
+2025-06-16 20:57:59,820 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:57:59,820 - ERROR - warnings.warn(
+2025-06-16 20:58:05,367 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:58:05,367 - ERROR - warnings.warn(
+2025-06-16 20:58:10,722 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:58:10,722 - ERROR - warnings.warn(
+2025-06-16 20:58:16,149 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:58:16,150 - ERROR - warnings.warn(
+2025-06-16 20:58:21,912 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 20:58:21,912 - ERROR - warnings.warn(
+2025-06-16 21:07:56,520 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:384: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 21:07:56,520 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 21:07:56,522 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:440: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 21:07:56,522 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 21:07:56,558 - INFO - Метрики на фолде 2: {'MAE': 1333.75, 'RMSE': np.float64(1469.92), 'MAPE': 33.33}
+2025-06-16 21:07:57,285 - INFO - График сохранен в plots_4h/cv_fold_2_forecast_4h.png
+2025-06-16 21:07:57,285 - INFO - --- Фолд 3/3 ---
+2025-06-16 21:07:57,303 - INFO - Обрезаем историю обучения с 89653 до 1440 точек.
+2025-06-16 21:07:57,303 - INFO - Обучение на 1440 точках, прогноз на 90 точек...
+2025-06-16 21:07:58,285 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:07:58,285 - ERROR - warnings.warn(
+2025-06-16 21:08:12,645 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:08:12,645 - ERROR - warnings.warn(
+2025-06-16 21:08:22,945 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:08:22,945 - ERROR - warnings.warn(
+2025-06-16 21:08:25,672 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:08:25,672 - ERROR - warnings.warn(
+2025-06-16 21:08:35,377 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:08:35,378 - ERROR - warnings.warn(
+2025-06-16 21:08:44,337 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:08:44,338 - ERROR - warnings.warn(
+2025-06-16 21:10:56,987 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:10:57,020 - ERROR - warnings.warn(
+2025-06-16 21:12:56,558 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:12:56,559 - ERROR - warnings.warn(
+2025-06-16 21:12:57,041 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:12:57,041 - ERROR - warnings.warn(
+2025-06-16 21:15:09,070 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:15:09,071 - ERROR - warnings.warn(
+2025-06-16 21:17:26,223 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:17:26,223 - ERROR - warnings.warn(
+2025-06-16 21:19:50,858 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:19:50,868 - ERROR - warnings.warn(
+2025-06-16 21:20:07,738 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:20:07,739 - ERROR - warnings.warn(
+2025-06-16 21:20:23,819 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:20:23,819 - ERROR - warnings.warn(
+2025-06-16 21:20:33,260 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:20:33,260 - ERROR - warnings.warn(
+2025-06-16 21:20:38,702 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:20:38,703 - ERROR - warnings.warn(
+2025-06-16 21:20:44,099 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:20:44,100 - ERROR - warnings.warn(
+2025-06-16 21:20:44,470 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:20:44,470 - ERROR - warnings.warn(
+2025-06-16 21:23:25,767 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:23:25,768 - ERROR - warnings.warn(
+2025-06-16 21:26:05,843 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:26:05,844 - ERROR - warnings.warn(
+2025-06-16 21:26:11,425 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:26:11,426 - ERROR - warnings.warn(
+2025-06-16 21:26:17,272 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:26:17,272 - ERROR - warnings.warn(
+2025-06-16 21:26:22,562 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:26:22,563 - ERROR - warnings.warn(
+2025-06-16 21:26:23,026 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:26:23,026 - ERROR - warnings.warn(
+2025-06-16 21:28:58,409 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:28:58,410 - ERROR - warnings.warn(
+2025-06-16 21:29:14,978 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:29:14,979 - ERROR - warnings.warn(
+2025-06-16 21:32:33,572 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:32:33,584 - ERROR - warnings.warn(
+2025-06-16 21:32:44,580 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:32:44,580 - ERROR - warnings.warn(
+2025-06-16 21:32:45,069 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:32:45,069 - ERROR - warnings.warn(
+2025-06-16 21:35:12,074 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:35:12,075 - ERROR - warnings.warn(
+2025-06-16 21:35:26,610 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:35:26,611 - ERROR - warnings.warn(
+2025-06-16 21:35:37,784 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:35:37,785 - ERROR - warnings.warn(
+2025-06-16 21:38:08,215 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:38:08,215 - ERROR - warnings.warn(
+2025-06-16 21:38:13,467 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:38:13,468 - ERROR - warnings.warn(
+2025-06-16 21:38:13,732 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:38:13,733 - ERROR - warnings.warn(
+2025-06-16 21:40:22,054 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:40:22,055 - ERROR - warnings.warn(
+2025-06-16 21:40:32,629 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:40:32,630 - ERROR - warnings.warn(
+2025-06-16 21:40:41,854 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:40:41,855 - ERROR - warnings.warn(
+2025-06-16 21:43:14,609 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:43:14,610 - ERROR - warnings.warn(
+2025-06-16 21:43:22,064 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:43:22,065 - ERROR - warnings.warn(
+2025-06-16 21:43:31,490 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:43:31,491 - ERROR - warnings.warn(
+2025-06-16 21:43:39,974 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:43:39,974 - ERROR - warnings.warn(
+2025-06-16 21:43:53,712 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:43:53,712 - ERROR - warnings.warn(
+2025-06-16 21:44:04,283 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:44:04,283 - ERROR - warnings.warn(
+2025-06-16 21:45:01,306 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:384: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 21:45:01,306 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 21:45:01,307 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:440: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-16 21:45:01,307 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-16 21:45:05,949 - INFO - Метрики на фолде 3: {'MAE': 402.13, 'RMSE': np.float64(514.82), 'MAPE': 11.83}
+2025-06-16 21:45:06,717 - INFO - График сохранен в plots_4h/cv_fold_3_forecast_4h.png
+2025-06-16 21:45:06,730 - INFO - --- Средние метрики CV: {'MAE': np.float64(665.84), 'RMSE': np.float64(811.4), 'MAPE': np.float64(17.88)} ---
+2025-06-16 21:45:06,730 - INFO - Обучение финальной модели на всех данных train+val...
+2025-06-16 21:45:34,419 - INFO - Fitting models using approximations to speed things up
+2025-06-16 21:47:18,443 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:47:18,444 - ERROR - warnings.warn(
+2025-06-16 21:47:32,164 - INFO - ARIMA(2,1,2)(1,0,1)[240] with drift        :241971.27839181494
+2025-06-16 21:47:32,496 - INFO - ARIMA(0,1,0) with drift        :254670.06173326945
+2025-06-16 21:47:37,159 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:47:37,159 - ERROR - warnings.warn(
+2025-06-16 21:47:45,373 - INFO - ARIMA(1,1,0)(1,0,0)[240] with drift        :249075.17074115176
+2025-06-16 21:48:08,966 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:48:08,967 - ERROR - warnings.warn(
+2025-06-16 21:48:13,324 - INFO - ARIMA(0,1,1)(0,0,1)[240] with drift        :251155.05845847967
+2025-06-16 21:48:13,326 - INFO - ARIMA(0,1,0)                   :254668.0619185022
+2025-06-16 21:50:02,927 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:50:02,928 - ERROR - warnings.warn(
+2025-06-16 21:50:12,560 - INFO - ARIMA(2,1,2)(0,0,1)[240] with drift        :244055.78692294355
+2025-06-16 21:51:15,206 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:51:15,207 - ERROR - warnings.warn(
+2025-06-16 21:51:25,203 - INFO - ARIMA(2,1,2)(1,0,0)[240] with drift        :241969.28145606362
+2025-06-16 21:51:49,036 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:51:49,059 - ERROR - warnings.warn(
+2025-06-16 21:51:49,093 - INFO - ARIMA(2,1,2) with drift        :244055.15013654
+2025-06-16 21:54:06,843 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:54:06,843 - ERROR - warnings.warn(
+2025-06-16 21:56:51,185 - INFO - ARIMA(2,1,2)(2,0,0)[240] with drift        :241854.92286067634
+2025-06-16 21:59:37,083 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 21:59:37,084 - ERROR - warnings.warn(
+2025-06-16 22:01:18,614 - INFO - ARIMA(2,1,2)(2,0,1)[240] with drift        :241856.7251793623
+2025-06-16 22:02:49,731 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:02:49,732 - ERROR - warnings.warn(
+2025-06-16 22:05:06,774 - INFO - ARIMA(1,1,2)(2,0,0)[240] with drift        :247526.59850277042
+2025-06-16 22:07:12,906 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:07:12,907 - ERROR - warnings.warn(
+2025-06-16 22:10:37,884 - INFO - ARIMA(2,1,1)(2,0,0)[240] with drift        :241940.99463478662
+2025-06-16 22:13:17,582 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:13:17,645 - ERROR - warnings.warn(
+2025-06-16 22:16:14,455 - INFO - ARIMA(3,1,2)(2,0,0)[240] with drift        :241014.37317229234
+2025-06-16 22:17:04,773 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:17:04,773 - ERROR - warnings.warn(
+2025-06-16 22:17:19,956 - INFO - ARIMA(3,1,2)(1,0,0)[240] with drift        :241127.9199666294
+2025-06-16 22:20:11,854 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:20:11,931 - ERROR - warnings.warn(
+2025-06-16 22:21:58,535 - INFO - ARIMA(3,1,2)(2,0,1)[240] with drift        :241016.11485176295
+2025-06-16 22:24:11,397 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:24:11,474 - ERROR - warnings.warn(
+2025-06-16 22:24:30,464 - INFO - ARIMA(3,1,2)(1,0,1)[240] with drift        :241129.91442077523
+2025-06-16 22:25:57,647 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:25:57,674 - ERROR - warnings.warn(
+2025-06-16 22:29:03,554 - INFO - ARIMA(3,1,1)(2,0,0)[240] with drift        :241759.49304892487
+2025-06-16 22:30:40,288 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:30:40,289 - ERROR - warnings.warn(
+2025-06-16 22:32:20,179 - INFO - ARIMA(4,1,2)(2,0,0)[240] with drift        :240180.34567799716
+2025-06-16 22:33:34,487 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:33:34,488 - ERROR - warnings.warn(
+2025-06-16 22:33:40,210 - INFO - ARIMA(4,1,2)(1,0,0)[240] with drift        :240282.58461411062
+2025-06-16 22:35:45,048 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:35:45,049 - ERROR - warnings.warn(
+2025-06-16 22:38:08,772 - INFO - ARIMA(4,1,2)(2,0,1)[240] with drift        :240181.83995290092
+2025-06-16 22:41:42,737 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:41:42,738 - ERROR - warnings.warn(
+2025-06-16 22:41:48,820 - INFO - ARIMA(4,1,2)(1,0,1)[240] with drift        :240284.58432850562
+2025-06-16 22:42:06,395 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:42:06,395 - ERROR - warnings.warn(
+2025-06-16 22:45:37,218 - INFO - ARIMA(4,1,1)(2,0,0)[240] with drift        :242861.0031291514
+2025-06-16 22:48:55,932 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 22:48:55,933 - ERROR - warnings.warn(
+2025-06-16 23:06:23,691 - INFO - ARIMA(5,1,2)(2,0,0)[240] with drift        :240154.56437716368
+2025-06-16 23:09:05,532 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:09:05,532 - ERROR - warnings.warn(
+2025-06-16 23:09:16,078 - INFO - ARIMA(5,1,2)(1,0,0)[240] with drift        :240277.51879084675
+2025-06-16 23:14:45,894 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:14:45,894 - ERROR - warnings.warn(
+2025-06-16 23:16:34,941 - INFO - ARIMA(5,1,2)(2,0,1)[240] with drift        :240156.35646949685
+2025-06-16 23:20:08,391 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:20:08,392 - ERROR - warnings.warn(
+2025-06-16 23:20:20,100 - INFO - ARIMA(5,1,2)(1,0,1)[240] with drift        :240279.51525146366
+2025-06-16 23:22:28,305 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:22:28,369 - ERROR - warnings.warn(
+2025-06-16 23:24:40,214 - INFO - ARIMA(5,1,1)(2,0,0)[240] with drift        :240152.5673967214
+2025-06-16 23:25:18,665 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:25:18,665 - ERROR - warnings.warn(
+2025-06-16 23:25:24,157 - INFO - ARIMA(5,1,1)(1,0,0)[240] with drift        :240275.717388301
+2025-06-16 23:30:02,825 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:30:02,831 - ERROR - warnings.warn(
+2025-06-16 23:31:58,811 - INFO - ARIMA(5,1,1)(2,0,1)[240] with drift        :240154.35867179817
+2025-06-16 23:33:26,833 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:33:26,833 - ERROR - warnings.warn(
+2025-06-16 23:33:33,227 - INFO - ARIMA(5,1,1)(1,0,1)[240] with drift        :240277.71385665674
+2025-06-16 23:34:09,376 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:34:09,376 - ERROR - warnings.warn(
+2025-06-16 23:36:07,030 - INFO - ARIMA(5,1,0)(2,0,0)[240] with drift        :243702.79750454656
+2025-06-16 23:37:27,529 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:37:27,530 - ERROR - warnings.warn(
+2025-06-16 23:39:44,709 - INFO - ARIMA(4,1,0)(2,0,0)[240] with drift        :244094.22022943248
+2025-06-16 23:40:36,572 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:40:36,572 - ERROR - warnings.warn(
+2025-06-16 23:42:16,183 - INFO - ARIMA(5,1,1)(2,0,0)[240]                   :240150.59601289706
+2025-06-16 23:42:29,656 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:42:29,656 - ERROR - warnings.warn(
+2025-06-16 23:42:40,098 - INFO - ARIMA(5,1,1)(1,0,0)[240]                   :240273.76407125374
+2025-06-16 23:45:19,899 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:45:19,900 - ERROR - warnings.warn(
+2025-06-16 23:47:24,958 - INFO - ARIMA(5,1,1)(2,0,1)[240]                   :240152.3876976148
+2025-06-16 23:48:01,463 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:48:01,463 - ERROR - warnings.warn(
+2025-06-16 23:48:16,532 - INFO - ARIMA(5,1,1)(1,0,1)[240]                   :240275.76053495225
+2025-06-16 23:48:30,337 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:48:30,337 - ERROR - warnings.warn(
+2025-06-16 23:50:06,815 - INFO - ARIMA(4,1,1)(2,0,0)[240]                   :242851.36942318876
+2025-06-16 23:51:03,153 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:51:03,153 - ERROR - warnings.warn(
+2025-06-16 23:53:27,519 - INFO - ARIMA(5,1,0)(2,0,0)[240]                   :243700.7977684037
+2025-06-16 23:54:18,495 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:54:18,496 - ERROR - warnings.warn(
+2025-06-16 23:55:58,190 - INFO - ARIMA(5,1,2)(2,0,0)[240]                   :240152.59288834158
+2025-06-16 23:56:07,528 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:56:07,529 - ERROR - warnings.warn(
+2025-06-16 23:58:26,409 - INFO - ARIMA(4,1,0)(2,0,0)[240]                   :244092.22042639623
+2025-06-16 23:59:55,422 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/statsforecast/arima.py:479: UserWarning: possible convergence problem: minimize gave code 2]
+2025-06-16 23:59:55,423 - ERROR - warnings.warn(
+2025-06-17 00:01:44,889 - INFO - ARIMA(4,1,2)(2,0,0)[240]                   :240178.35964329538
+2025-06-17 00:01:44,900 - INFO - Now re-fitting the best model(s) without approximations...
+2025-06-17 00:47:54,306 - INFO - ARIMA(5,1,1)(2,0,0)[240]                   :1202764.6776555295
+2025-06-17 00:47:54,459 - WARNING - Не удалось извлечь параметры модели: 'AutoARIMA' object has no attribute 'model_'
+2025-06-17 00:51:02,166 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:384: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-17 00:51:02,166 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-17 00:51:02,514 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/.venv/lib/python3.10/site-packages/utilsforecast/processing.py:440: FutureWarning: 'S' is deprecated and will be removed in a future version, please use 's' instead.
+2025-06-17 00:51:02,515 - ERROR - freq = pd.tseries.frequencies.to_offset(freq)
+2025-06-17 00:51:03,067 - INFO - Saving StatsForecast object of size 9.97MB.
+2025-06-17 00:51:03,150 - INFO - StatsForecast object saved
+2025-06-17 00:51:03,150 - INFO - Финальная модель сохранена в statsforecast_model.pkl
+2025-06-17 00:51:03,379 - INFO - --- Метрики на Hold-Out сете ---
+2025-06-17 00:51:03,379 - INFO - Hold-Out • MAE=701.5  RMSE=852.1  MAPE=25.52%
+2025-06-17 00:51:03,380 - INFO - Визуализация финального результата...
+2025-06-17 00:51:04,809 - INFO - График сохранен в plots_4h/final_hold_out_forecast_4h.png
