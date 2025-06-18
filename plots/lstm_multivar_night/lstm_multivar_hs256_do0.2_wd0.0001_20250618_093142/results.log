@@ -9,3 +9,14 @@
 2025-06-18 10:16:01,018 - INFO - [Epoch 6/30] train_loss=0.25951 val_loss=0.10924
 2025-06-18 10:23:17,640 - INFO - [Epoch 7/30] train_loss=0.22301 val_loss=0.10325
 2025-06-18 10:30:01,650 - INFO - [Epoch 8/30] train_loss=0.22514 val_loss=0.10777
+2025-06-18 10:37:00,158 - INFO - [Epoch 9/30] train_loss=0.24374 val_loss=0.12002
+2025-06-18 10:43:30,452 - INFO - [Epoch 10/30] train_loss=0.19793 val_loss=0.12665
+2025-06-18 10:50:17,453 - INFO - [Epoch 11/30] train_loss=0.20650 val_loss=0.14332
+2025-06-18 10:56:49,396 - INFO - [Epoch 12/30] train_loss=0.21657 val_loss=0.11795
+2025-06-18 11:03:21,627 - INFO - Early stop at epoch 13
+2025-06-18 11:03:21,728 - INFO - Fold 1: MAE=23.51 RMSE=26.37 MAPE=5.41% on 900 pts
+2025-06-18 11:03:21,730 - ERROR - /home/borovets.av/kolya/realtime_anomaly_analytics/ts_toolkit/viz.py:28: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+2025-06-18 11:03:21,730 - ERROR - plt.figure(figsize=(15,5))
+2025-06-18 11:03:22,327 - INFO - --- Fold 2/5 ---
+2025-06-18 11:10:40,235 - INFO - [Epoch 1/30] train_loss=0.25110 val_loss=0.11007
+2025-06-18 11:21:17,413 - INFO - [Epoch 2/30] train_loss=0.20055 val_loss=0.12989
