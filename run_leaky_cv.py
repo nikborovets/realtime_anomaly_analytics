@@ -43,6 +43,47 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 
+def final_plots(y_true, y_pred, model_name, plots_dir):
+    resid = y_true - y_pred
+    ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    # ---------------------------------------------------
+    # 2.2  сводные метрики
+    # ---------------------------------------------------
+    metrics = global_metrics(y_true, y_pred)
+    metrics_df = pd.DataFrame([metrics]).T.rename(columns={0: "value"})
+    logging.info("\n*** Hold-out metrics ***")
+    logging.info(metrics_df)
+
+    # ---------------------------------------------------
+    # 2.4  распределение ошибок
+    # ---------------------------------------------------
+    plt.figure(figsize=(12,4))
+    plt.hist(resid, bins=100, alpha=.7, edgecolor='black')
+    plt.axvline(resid.mean(), color='r', linestyle='--', label=f"mean={resid.mean():.1f}")
+    plt.title("Residual distribution on test")
+    plt.xlabel("error (true − pred)")
+    plt.legend(); plt.tight_layout(); 
+    filename=os.path.join(plots_dir, f'residual_distribution_{ts}.png')
+    plt.savefig(filename)
+    plt.close()
+    # ---------------------------------------------------
+    # 2.5  true vs pred scatter
+    # ---------------------------------------------------
+    plt.figure(figsize=(6,6))
+    plt.scatter(y_true, y_pred, s=3, alpha=0.5)
+    lim = [0, max(y_true.max(), y_pred.max())*1.05]
+    plt.plot(lim, lim, 'k--')
+    plt.xlabel("true"); plt.ylabel("pred")
+    plt.title("True vs predicted, test split")
+    plt.tight_layout(); 
+    filename=os.path.join(plots_dir, f'true_vs_pred_scatter_{ts}.png')
+    plt.savefig(filename)
+    plt.close()
+
+
+    
+
 
 def main():
     """Основная функция для запуска всего процесса."""
@@ -185,6 +226,8 @@ def main():
                 title=f'Leaky Forecast vs Actual — Fold {fold_num}',
                 filename=os.path.join(plots_dir, f'cv_fold_{fold_num}_forecast_{datetime.datetime.now().strftime("%Y%m%d_%H%M%S")}.png')
             )
+            if fold_num == n_splits:
+                final_plots(y_true_fold, y_pred_fold, model_name, plots_dir)
         else:
             logging.warning(f"На фолде {fold_num} не получилось посчитать метрики.")
 
