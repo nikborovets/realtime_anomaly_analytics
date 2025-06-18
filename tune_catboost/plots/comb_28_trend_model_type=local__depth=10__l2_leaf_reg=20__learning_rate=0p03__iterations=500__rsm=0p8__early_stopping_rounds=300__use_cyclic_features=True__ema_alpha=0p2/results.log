@@ -1,0 +1,5 @@
+2025-06-18 16:07:18,084 - INFO - Начинаю оценку комбинации comb_28_trend_model_type=local__depth=10__l2_leaf_reg=20__learning_rate=0p03__iterations=500__rsm=0p8__early_stopping_rounds=300__use_cyclic_features=True__ema_alpha=0p2
+2025-06-18 16:12:02,949 - INFO - Fold 1 metrics: {'MAE': 31.88638121140887, 'RMSE': np.float64(37.773493277724235), 'MAPE': 7.539402691870937}
+2025-06-18 16:16:04,836 - INFO - Fold 2 metrics: {'MAE': 24.787517204018457, 'RMSE': np.float64(29.099604389255976), 'MAPE': 5.9773183175637605}
+2025-06-18 16:21:10,596 - INFO - Fold 3 metrics: {'MAE': 19.772981194197143, 'RMSE': np.float64(22.58668197064027), 'MAPE': 4.853173833971067}
+2025-06-18 16:25:43,549 - INFO - Fold 4 metrics: {'MAE': 41.463308551206914, 'RMSE': np.float64(49.745394328535866), 'MAPE': 9.563585452784325}

@@ -68,7 +68,7 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
             "depth": 10,
             "l2_leaf_reg": 20,
             "learning_rate": 0.03,
-            "iterations": 3000,
+            "iterations": 500,
             "rsm": 0.8,
             "early_stopping_rounds": 500,
             "use_cyclic_features": True,
@@ -80,11 +80,11 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
             "depth": 15,
             "l2_leaf_reg": 40,
             "learning_rate": 0.015,
-            "iterations": 3000,
+            "iterations": 500,
             "rsm": 0.75,
             "early_stopping_rounds": 300,
             "use_cyclic_features": False,
-            "ema_alpha": 0.3,
+            "ema_alpha": 0.7,
         })
 
         # 3-6: local, окно 960 и 5760, по две крайние конфигурации
@@ -95,7 +95,7 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
                 "depth": 10,
                 "l2_leaf_reg": 20,
                 "learning_rate": 0.03,
-                "iterations": 3000,
+                "iterations": 500,
                 "rsm": 0.8,
                 "early_stopping_rounds": 300,
                 "use_cyclic_features": True,
@@ -107,7 +107,7 @@ def build_param_grid(fast: bool = False) -> List[Dict]:
                 "depth": 15,
                 "l2_leaf_reg": 40,
                 "learning_rate": 0.015,
-                "iterations": 3000,
+                "iterations": 500,
                 "rsm": 0.75,
                 "early_stopping_rounds": 300,
                 "use_cyclic_features": False,
@@ -292,8 +292,8 @@ def tune_model(
 
     results = []
     for idx, params in enumerate(params_to_try, 1):
-        new_inx = idx + 20
-        logging.info("==== Комбинация %d/%d ====" , new_inx, len(params_to_try)+20)
+        new_inx = idx + 25
+        logging.info("==== Комбинация %d/%d ====" , new_inx, len(params_to_try)+25)
         logging.info("Параметры: %s", params)
         metrics = evaluate_params(params, df_full, target_col, new_inx, n_splits, test_size)
         logging.info("Средние метрики: %s", metrics)
