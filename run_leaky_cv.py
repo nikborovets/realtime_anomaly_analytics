@@ -49,7 +49,18 @@ def main():
     
     # Имя модели для сохранения графиков
     model_name = f"clown_leakage_model_with_cv_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    os.makedirs(f"clown_leakage_plots_avg/{model_name}", exist_ok=True)
+    plots_dir = f"clown_leakage_plots_avg/{model_name}"
+    os.makedirs(plots_dir, exist_ok=True)
+
+    # --- Настройка логирования в файл ---
+    log_file_path = os.path.join(plots_dir, "run.log")
+    file_handler = logging.FileHandler(log_file_path)
+    file_handler.setFormatter(
+        logging.Formatter(
+            "[%(asctime)s] %(levelname)s: %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
+        )
+    )
+    logging.getLogger().addHandler(file_handler)
     
     # ────────────────────────────────────────────────────────────────
     #  Блок 1: Загрузка и подготовка данных (как в ноутбуке)
@@ -135,22 +146,29 @@ def main():
         y_pred_arr = model_fold.model.predict(test_df_internal[feature_names])
         y_pred_fold = pd.Series(y_pred_arr, index=y_true_fold.index)
         
-        # --- Добавление шума для реалистичности ---
+        # --- Формирование ступенчатого сигнала ---
         if not y_pred_fold.empty:
-            # 1. Добавление случайных "скачков" раз в 1-10 точек
-            y_pred_realistic = np.copy(y_pred_fold.values)
-            next_spike_in = np.random.randint(1, 10)
-            for i in range(len(y_pred_realistic)):
-                next_spike_in -= 1
-                if next_spike_in == 0:
-                    change = np.random.choice([-1, 1])
-                    y_pred_realistic[i] += change
-                    # Сбрасываем счетчик для следующего скачка
-                    next_spike_in = np.random.randint(1, 10)
+            original_preds = y_pred_fold.values
+            y_pred_realistic = np.zeros_like(original_preds)
             
-            # 2. Убедимся, что нет отрицательных значений
+            i = 0
+            while i < len(original_preds):
+                # 1. Определяем ширину ступени (2-4 точки)
+                step_width = np.random.randint(1, 3)
+                
+                # 2. Берем значение из оригинального прогноза в начале ступени
+                step_value = original_preds[i] + np.random.randint(-1, 1)
+                
+                # 3. Устанавливаем это значение для всей ступени
+                end_of_step = min(i + step_width, len(original_preds))
+                y_pred_realistic[i:end_of_step] = step_value
+                
+                # 4. Переходим к началу следующей ступени
+                i = end_of_step
+
+            # 5. Убедимся, что нет отрицательных значений
             y_pred_realistic[y_pred_realistic < 0] = 0
-            y_pred_fold = pd.Series(y_pred_realistic, index=y_pred_fold.index) # Используем новый прогноз
+            y_pred_fold = pd.Series(y_pred_realistic, index=y_pred_fold.index)
         
         # Метрики и график
         if not y_true_fold.empty:
@@ -165,7 +183,7 @@ def main():
                 forecast=y_pred_fold,
                 actual=y_true_fold,
                 title=f'Leaky Forecast vs Actual — Fold {fold_num}',
-                filename=f'clown_leakage_plots_avg/{model_name}/cv_fold_{fold_num}_forecast_{datetime.datetime.now().strftime("%Y%m%d_%H%M%S")}.png'
+                filename=os.path.join(plots_dir, f'cv_fold_{fold_num}_forecast_{datetime.datetime.now().strftime("%Y%m%d_%H%M%S")}.png')
             )
         else:
             logging.warning(f"На фолде {fold_num} не получилось посчитать метрики.")
