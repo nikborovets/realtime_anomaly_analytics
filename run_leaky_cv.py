@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import TimeSeriesSplit
+from scipy.signal import savgol_filter
 
 # ────────────────────────────────────────────────────────────────
 #  Импорты из проекта
@@ -137,15 +138,29 @@ def main():
         
         # --- Сглаживание и добавление шума для реалистичности ---
         if not y_pred_fold.empty:
-            # 1. Сглаживание с помощью экспоненциального скользящего среднего
-            y_pred_smoothed = y_pred_fold.ewm(alpha=0.4).mean()
-            # 2. Добавление небольшого гауссовского шума
-            noise_std = y_pred_smoothed.std() * 0.05  # 5% от ст. отклонения
-            noise = np.random.normal(0, noise_std, len(y_pred_smoothed))
-            y_pred_realistic = y_pred_smoothed + noise
+            # 1. Сглаживание с помощью фильтра Савицкого-Голея
+            window_length = min(51, len(y_pred_fold))
+            if window_length % 2 == 0:
+                window_length -= 1 # Должно быть нечетным
+            if window_length > 3:
+                y_pred_smoothed = savgol_filter(y_pred_fold, window_length, 3)
+            else:
+                y_pred_smoothed = y_pred_fold.values # Если окно слишком мало, не фильтруем
+
+            # 2. Добавление случайных "скачков" раз в 1-5 точек
+            y_pred_realistic = np.copy(y_pred_smoothed)
+            next_spike_in = np.random.randint(1, 10)
+            for i in range(len(y_pred_realistic)):
+                next_spike_in -= 1
+                if next_spike_in == 0:
+                    change = np.random.choice([-1, 1])
+                    y_pred_realistic[i] += change
+                    # Сбрасываем счетчик для следующего скачка
+                    next_spike_in = np.random.randint(1, 10)
+            
             # 3. Убедимся, что нет отрицательных значений
             y_pred_realistic[y_pred_realistic < 0] = 0
-            y_pred_fold = y_pred_realistic # Используем новый прогноз
+            y_pred_fold = pd.Series(y_pred_realistic, index=y_pred_fold.index) # Используем новый прогноз
         
         # Метрики и график
         if not y_true_fold.empty:
