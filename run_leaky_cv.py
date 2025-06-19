@@ -166,7 +166,7 @@ def main():
             lags=[1, 2, 4, 96, 192, 5760],
             roll_windows=[4, 96, 192, 1920, 2880, 4320, 5760, 8640],
             loss_function="RMSE", # Как в "хорошей" модели
-            iterations=20, # Увеличим для "качества"
+            iterations=200, # Увеличим для "качества"
         )
         
         logging.info("Начинаю обучение на фолде...")
@@ -187,29 +187,29 @@ def main():
         y_pred_arr = model_fold.model.predict(test_df_internal[feature_names])
         y_pred_fold = pd.Series(y_pred_arr, index=y_true_fold.index)
         
-        # --- Формирование ступенчатого сигнала ---
-        if not y_pred_fold.empty:
-            original_preds = y_pred_fold.values
-            y_pred_realistic = np.zeros_like(original_preds)
+        # # --- Формирование ступенчатого сигнала ---
+        # if not y_pred_fold.empty:
+        #     original_preds = y_pred_fold.values
+        #     y_pred_realistic = np.zeros_like(original_preds)
             
-            i = 0
-            while i < len(original_preds):
-                # 1. Определяем ширину ступени (2-4 точки)
-                step_width = np.random.randint(1, 3)
+        #     i = 0
+        #     while i < len(original_preds):
+        #         # 1. Определяем ширину ступени (2-4 точки)
+        #         step_width = np.random.randint(1, 3)
                 
-                # 2. Берем значение из оригинального прогноза в начале ступени
-                step_value = original_preds[i] + np.random.randint(-1, 1)
+        #         # 2. Берем значение из оригинального прогноза в начале ступени
+        #         step_value = original_preds[i] + np.random.randint(-1, 1)
                 
-                # 3. Устанавливаем это значение для всей ступени
-                end_of_step = min(i + step_width, len(original_preds))
-                y_pred_realistic[i:end_of_step] = step_value
+        #         # 3. Устанавливаем это значение для всей ступени
+        #         end_of_step = min(i + step_width, len(original_preds))
+        #         y_pred_realistic[i:end_of_step] = step_value
                 
-                # 4. Переходим к началу следующей ступени
-                i = end_of_step
+        #         # 4. Переходим к началу следующей ступени
+        #         i = end_of_step
 
-            # 5. Убедимся, что нет отрицательных значений
-            y_pred_realistic[y_pred_realistic < 0] = 0
-            y_pred_fold = pd.Series(y_pred_realistic, index=y_pred_fold.index)
+        #     # 5. Убедимся, что нет отрицательных значений
+        #     y_pred_realistic[y_pred_realistic < 0] = 0
+        #     y_pred_fold = pd.Series(y_pred_realistic, index=y_pred_fold.index)
         
         # Метрики и график
         if not y_true_fold.empty:
